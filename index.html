@@ -212,6 +212,76 @@
 
 
   
+    <article id="post-HEXO个人博客添加DuoShuo多说模块" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/03/HEXO个人博客添加DuoShuo多说模块/">HEXO个人博客添加DuoShuo多说模块</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>参考连接 <a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9</a><br>官方文档 <a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9</a></p>
+</blockquote>
+<p>&emsp;&emsp;Hexo默认使用的评论插件是Disqus,但是我还是支持国产，毕竟网速什么的肯定比国外的网站快啦~下面是我总计的一些步骤。本人用的是<a href="http://litten.github.io/" title="litten" target="_blank" rel="external">Yilia</a>主题。</p>
+<ol>
+<li>首先我们要注册一个<a href="http://duoshuo.com/" title="多说官网" target="_blank" rel="external">多说账号</a>~<br><a href="http://duoshuo.com/" target="_blank" rel="external">http://duoshuo.com/</a> 官网地址<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/7116362.jpg" alt="多说注册界面"></li>
+<li><p>找到我们hexo的一级目录下面的<code>_config.yml</code>配置文件，用记事本类工具打开找到<code>duoshuo</code>,改成以下代码（后面的关键字是你的<strong>多说域名的名字部分，比如<a href="http://abc.duoshuo.com" target="_blank" rel="external">http://abc.duoshuo.com</a> 那么代码里面的frankroc部分要写abc</strong>）：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">duoshuo: frankroc</div></pre></td></tr></table></figure>
+</li>
+<li><p>路径<code>themes\yilia\layout\_partial\article.ejs</code> 打开ejs文件：<br>找到(我的在最后面一段)  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.disqus_shortname)&#123; %&gt;</div><div class="line">&lt;section id=&quot;comments&quot;&gt;</div><div class="line">  &lt;div id=&quot;disqus_thread&quot;&gt;</div><div class="line">    &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;//disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
+<p>全部替换成下面的代码：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</div><div class="line">&lt;section id=&quot;comments&quot;&gt;</div><div class="line">&lt;!-- 多说评论框 start --&gt;</div><div class="line">&lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;&quot; data-title=&quot;&lt;%= post.title %&gt;&quot; data-url=&quot;&lt;%= page.permalink %&gt;&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;!-- 多说评论框 end --&gt;</div><div class="line">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">var duoshuoQuery = &#123;short_name:&apos;&lt;%= config.duoshuo_shortname %&gt;&apos;&#125;;</div><div class="line">  (function() &#123;</div><div class="line">    var ds = document.createElement(&apos;script&apos;);</div><div class="line">    ds.type = &apos;text/javascript&apos;;ds.async = true;</div><div class="line">    ds.src = (document.location.protocol == &apos;https:&apos; ? &apos;https:&apos; : &apos;http:&apos;) + &apos;//static.duoshuo.com/embed.js&apos;;</div><div class="line">    ds.charset = &apos;UTF-8&apos;;</div><div class="line">    (document.getElementsByTagName(&apos;head&apos;)[0] </div><div class="line">     || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(ds);</div><div class="line">  &#125;)();</div><div class="line">  &lt;/script&gt;</div><div class="line">&lt;!-- 多说公共JS代码 end --&gt;</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>博客效果如图：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/59484331.jpg" alt="博客评论区"><br>多说后台图：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/4934609.jpg" alt="多说后台图"></p>
+</blockquote>
+<p>&emsp;&emsp;开始可能一脸懵逼，但是只要你跟着做，一定ok。遇到问题的话可以浏览或者加我微博,QQ帮你解决一下。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/03/HEXO个人博客添加DuoShuo多说模块/" class="archive-article-date">
+  	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多说/">多说</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Git的一些基本指令" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -265,8 +335,7 @@
 <li><strong>版本号（commit id）</strong>“首先要知道回退的版本号，其次版本号不一定要写全，但是也不能太少否则Git会匹配多个版本号造成混乱。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>###小结</p>
-<ol>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
 <li><strong><code>HEAD</code></strong> 指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<strong><code>Git reset --hard commit_id</code></strong>.</li>
 <li>在回退之前，可以用<strong><code>git log</code></strong>查看提交的历史</li>
 <li>关闭窗口后回来查看版本，可以用<strong><code>git reflog</code></strong>来查看要回退到哪个版本</li>
@@ -358,8 +427,7 @@
 </blockquote>
 </blockquote>
 <p> 当存在多个stash时，可以用 git stash apply stash@{0}来恢复指定的stash。</p>
-<p>####多人协作####</p>
-<ul>
+<h4 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h4><ul>
 <li><p>查看远程仓库的信息。（默认名字叫origin）。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote</div></pre></td></tr></table></figure>
 </li>
@@ -382,7 +450,7 @@
 </blockquote>
 <ul>
 <li>再pull：合并冲突，再pull</li>
-<li>最后git push origin dev 成功！<br>#####小结#####</li>
+<li>最后git push origin dev 成功！<h5 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h5></li>
 </ul>
 <ol>
 <li><p>查看远程库信息，使用git remote -v；</p>
@@ -399,8 +467,7 @@
 </li>
 </ol>
 <hr>
-<p>#####标签#####</p>
-<ul>
+<h5 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h5><ul>
 <li><p>创建name 标签（在最新的commit上的）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git tag &quot;name&quot;</div></pre></td></tr></table></figure>
 </li>
@@ -429,11 +496,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push origin --tag</div></pre></td></tr></table></figure>
 </li>
 <li><p>删除远程仓库的tagname</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ git push origin :refs/tags/tagname</div><div class="line">```  </div><div class="line"></div><div class="line">---</div><div class="line"></div><div class="line">###自定义GIT###</div><div class="line">  </div><div class="line">* 定义界面颜色</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ git push origin :refs/tags/tagname</div><div class="line">```  </div><div class="line"></div><div class="line">---</div><div class="line"></div><div class="line">### 自定义GIT ###</div><div class="line"></div><div class="line">* 定义界面颜色</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>$ git config –global color.ui true<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* 特殊文件上传</div></pre></td></tr></table></figure></p>
-<p>$ git add -f filename<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-f带表强制添加</div><div class="line">###配置别名###</div><div class="line">* 以后st就表示status</div></pre></td></tr></table></figure></p>
+<p>$ git add -f filename<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">-f带表强制添加</div><div class="line"></div><div class="line">### 配置别名 ###</div><div class="line"></div><div class="line">* 以后st就表示status</div></pre></td></tr></table></figure></p>
 <p>$ git config –global alias.st status<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* 撤销add缓存区的操作(unstage)</div></pre></td></tr></table></figure></p>
 <p>$ git reset “filename”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* 此命令为git log的加强版简化  </div><div class="line">```bash</div><div class="line">$ git config --global alias.lg &quot;log --color --graph --pretty=format:&apos;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&apos; --abbrev-commit&quot;</div></pre></td></tr></table></figure></p>
 <hr>
@@ -444,76 +511,6 @@
     <div class="article-info article-info-index">
       
       <a href="/2016/10/03/Git的一些基本指令/" class="archive-article-date">
-  	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多说/">多说</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-HEXO个人博客添加DuoShuo多说模块" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/03/HEXO个人博客添加DuoShuo多说模块/">HEXO个人博客添加DuoShuo多说模块</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>参考连接 <a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9</a><br>官方文档 <a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9</a></p>
-</blockquote>
-<p>&emsp;&emsp;Hexo默认使用的评论插件是Disqus,但是我还是支持国产，毕竟网速什么的肯定比国外的网站快啦~下面是我总计的一些步骤。本人用的是<a href="http://litten.github.io/" title="litten" target="_blank" rel="external">Yilia</a>主题。</p>
-<ol>
-<li>首先我们要注册一个<a href="http://duoshuo.com/" title="多说官网" target="_blank" rel="external">多说账号</a>~<br><a href="http://duoshuo.com/" target="_blank" rel="external">http://duoshuo.com/</a> 官网地址<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/7116362.jpg" alt="多说注册界面"></li>
-<li><p>找到我们hexo的一级目录下面的<code>_config.yml</code>配置文件，用记事本类工具打开找到<code>duoshuo</code>,改成以下代码（后面的关键字是你的<strong>多说域名的名字部分，比如<a href="http://abc.duoshuo.com" target="_blank" rel="external">http://abc.duoshuo.com</a> 那么代码里面的frankroc部分要写abc</strong>）：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">duoshuo: frankroc</div></pre></td></tr></table></figure>
-</li>
-<li><p>路径<code>themes\yilia\layout\_partial\article.ejs</code> 打开ejs文件：<br>找到(我的在最后面一段)  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.disqus_shortname)&#123; %&gt;</div><div class="line">&lt;section id=&quot;comments&quot;&gt;</div><div class="line">  &lt;div id=&quot;disqus_thread&quot;&gt;</div><div class="line">    &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;//disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
-<p>全部替换成下面的代码：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</div><div class="line">&lt;section id=&quot;comments&quot;&gt;</div><div class="line">&lt;!-- 多说评论框 start --&gt;</div><div class="line">&lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;&quot; data-title=&quot;&lt;%= post.title %&gt;&quot; data-url=&quot;&lt;%= page.permalink %&gt;&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;!-- 多说评论框 end --&gt;</div><div class="line">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">var duoshuoQuery = &#123;short_name:&apos;&lt;%= config.duoshuo_shortname %&gt;&apos;&#125;;</div><div class="line">  (function() &#123;</div><div class="line">    var ds = document.createElement(&apos;script&apos;);</div><div class="line">    ds.type = &apos;text/javascript&apos;;ds.async = true;</div><div class="line">    ds.src = (document.location.protocol == &apos;https:&apos; ? &apos;https:&apos; : &apos;http:&apos;) + &apos;//static.duoshuo.com/embed.js&apos;;</div><div class="line">    ds.charset = &apos;UTF-8&apos;;</div><div class="line">    (document.getElementsByTagName(&apos;head&apos;)[0] </div><div class="line">     || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(ds);</div><div class="line">  &#125;)();</div><div class="line">  &lt;/script&gt;</div><div class="line">&lt;!-- 多说公共JS代码 end --&gt;</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<blockquote>
-<p>博客效果如图：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/59484331.jpg" alt="博客评论区"><br>多说后台图：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/4934609.jpg" alt="多说后台图"></p>
-</blockquote>
-<p>&emsp;&emsp;开始可能一脸懵逼，但是只要你跟着做，一定ok。遇到问题的话可以浏览或者加我微博,QQ帮你解决一下。</p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/03/HEXO个人博客添加DuoShuo多说模块/" class="archive-article-date">
   	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
 </a>
       
