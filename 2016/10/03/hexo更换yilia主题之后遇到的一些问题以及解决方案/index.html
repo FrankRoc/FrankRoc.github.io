@@ -4,33 +4,44 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>hexo+github搭建网站遇到的一些问题收集总结 | FrankRoc</title>
+  <title>hexo更换Yilia主题之后遇到的一些问题以及解决方案（不定期更新） | FrankRoc</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;emsp;&amp;emsp;我是在看人家大神的简书来搭建个人博客的，但还是遇到了很多问题。这里，在等待安装的空闲时间写点错误总结。
+  <meta name="description" content="附上作者的github的参考链接https://github.com/litten/hexo-theme-yilia
 
-首先附上我参考的简书博主地址1.http://www.jianshu.com/p/06c0fb6f8b4d作者：hedge_hog 题目：最简单的Hexo搭建博客教程2.http://www.jianshu.com/p/465830080ea9 作者：潘柏信 题目：HE">
+&amp;emsp;&amp;emsp;我觉得不是很详细，很多配置都得自己研究，或许作业为了培养我们的自学研究能力吧~哈哈！在研究代码过程中也遇到了很多奇奇怪怪零零散散的小问题，同样做一个问题解决记录，方便自己和他人以后再遇到此问题能够及时的解决，节约大家的时间！
+
+问题1微博超链接到自己的主">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo+github搭建网站遇到的一些问题收集总结">
-<meta property="og:url" content="http://yoursite.com/2016/10/03/hexo+github搭建网站遇到的一些问题收集总结/index.html">
+<meta property="og:title" content="hexo更换Yilia主题之后遇到的一些问题以及解决方案（不定期更新）">
+<meta property="og:url" content="http://yoursite.com/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/index.html">
 <meta property="og:site_name" content="FrankRoc">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;我是在看人家大神的简书来搭建个人博客的，但还是遇到了很多问题。这里，在等待安装的空闲时间写点错误总结。
+<meta property="og:description" content="附上作者的github的参考链接https://github.com/litten/hexo-theme-yilia
 
-首先附上我参考的简书博主地址1.http://www.jianshu.com/p/06c0fb6f8b4d作者：hedge_hog 题目：最简单的Hexo搭建博客教程2.http://www.jianshu.com/p/465830080ea9 作者：潘柏信 题目：HE">
-<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/44204841.jpg">
-<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/18972637.jpg">
-<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/4312338.jpg">
-<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/30071233.jpg">
-<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/22966429.jpg">
-<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/73676557.jpg">
-<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/15605835.jpg">
-<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/72635996.jpg">
-<meta property="og:updated_time" content="2016-10-04T07:55:45.505Z">
+&amp;emsp;&amp;emsp;我觉得不是很详细，很多配置都得自己研究，或许作业为了培养我们的自学研究能力吧~哈哈！在研究代码过程中也遇到了很多奇奇怪怪零零散散的小问题，同样做一个问题解决记录，方便自己和他人以后再遇到此问题能够及时的解决，节约大家的时间！
+
+问题1微博超链接到自己的主">
+<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/79959974.jpg">
+<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/7544631.jpg">
+<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/10589765.jpg">
+<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/48371272.jpg">
+<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/95961972.jpg">
+<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/28645477.jpg">
+<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/68289722.jpg">
+<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/27306096.jpg">
+<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/5560407.jpg">
+<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/43502974.jpg">
+<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/97835455.jpg">
+<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/35231061.jpg">
+<meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/5127846.jpg">
+<meta property="og:updated_time" content="2016-10-04T08:39:01.232Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo+github搭建网站遇到的一些问题收集总结">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;我是在看人家大神的简书来搭建个人博客的，但还是遇到了很多问题。这里，在等待安装的空闲时间写点错误总结。
+<meta name="twitter:title" content="hexo更换Yilia主题之后遇到的一些问题以及解决方案（不定期更新）">
+<meta name="twitter:description" content="附上作者的github的参考链接https://github.com/litten/hexo-theme-yilia
 
-首先附上我参考的简书博主地址1.http://www.jianshu.com/p/06c0fb6f8b4d作者：hedge_hog 题目：最简单的Hexo搭建博客教程2.http://www.jianshu.com/p/465830080ea9 作者：潘柏信 题目：HE">
-<meta name="twitter:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/44204841.jpg">
+&amp;emsp;&amp;emsp;我觉得不是很详细，很多配置都得自己研究，或许作业为了培养我们的自学研究能力吧~哈哈！在研究代码过程中也遇到了很多奇奇怪怪零零散散的小问题，同样做一个问题解决记录，方便自己和他人以后再遇到此问题能够及时的解决，节约大家的时间！
+
+问题1微博超链接到自己的主">
+<meta name="twitter:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/79959974.jpg">
   
     <link rel="alternative" href="/atom.xml" title="FrankRoc" type="application/atom+xml">
   
@@ -154,7 +165,7 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-hexo+github搭建网站遇到的一些问题收集总结" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-hexo更换yilia主题之后遇到的一些问题以及解决方案" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -164,7 +175,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hexo+github搭建网站遇到的一些问题收集总结
+      hexo更换Yilia主题之后遇到的一些问题以及解决方案（不定期更新）
     </h1>
   
 
@@ -172,39 +183,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&emsp;&emsp;我是在看人家大神的简书来搭建个人博客的，但还是遇到了很多问题。这里，在等待安装的空闲时间写点错误总结。</p>
-<blockquote>
-<p>首先附上我参考的简书博主地址<br>1.<a href="http://www.jianshu.com/p/06c0fb6f8b4d" title="最简单的Hexo搭建博客教程" target="_blank" rel="external">http://www.jianshu.com/p/06c0fb6f8b4d</a>作者：hedge_hog 题目：最简单的Hexo搭建博客教程<br>2.<a href="http://www.jianshu.com/p/465830080ea9" title="HEXO+Github,搭建属于自己的博客" target="_blank" rel="external">http://www.jianshu.com/p/465830080ea9</a> 作者：潘柏信 题目：HEXO+Github,搭建属于自己的博客<br>3.<a href="http://www.jianshu.com/p/b7886271e21a" title="Hexo安装和配置" target="_blank" rel="external">http://www.jianshu.com/p/b7886271e21a</a>作者：holaOla 题目：Hexo安装和配置</p>
+        <blockquote>
+<p>附上作者的github的参考链接<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia</a></p>
 </blockquote>
+<p>&emsp;&emsp;我觉得不是很详细，很多配置都得自己研究，或许作业为了培养我们的自学研究能力吧~哈哈！在研究代码过程中也遇到了很多奇奇怪怪零零散散的小问题，同样做一个问题解决记录，方便自己和他人以后再遇到此问题能够及时的解决，节约大家的时间！</p>
 <ul>
-<li><strong>问题1</strong>：nodejs自带的npm版本太低我要升级！怎么升级？(这个问题貌似不是很影响博客可以无视了)<br><strong>初始方案</strong>：试试命令 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install npm（前提你安装了nodejs）</div></pre></td></tr></table></figure>
+<li><strong>问题1</strong>微博超链接到自己的主页？那么自己的主页地址是什么的？<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/79959974.jpg" alt="微博链接"><br>解决方法：<br>1.打开新浪微博后如下图，在右侧找到自己的昵称，点击它。<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/7544631.jpg" alt="1.1图片微博"><br>2.打开个人主页面，如下图，在顶部地址栏中可以看到有几段地址，把后面的东西删除掉剩下包括一堆数字以及前面的部分。然后回车<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/10589765.jpg" alt="1.2链接删除"><br>3.回车之后加载出的地址便是我们需要的地址了~如下图<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/48371272.jpg" alt="1.3正确分享地址"></li>
+<li><strong>问题2.</strong>github的链接在哪里？<br>解决方法：<br>1.首先你得有github账户对吧？至于怎么申请？来有教程<br><a href="http://jingyan.baidu.com/article/455a9950abe0ada167277864.html" target="_blank" rel="external">http://jingyan.baidu.com/article/455a9950abe0ada167277864.html</a> &lt;-百度教程链接<br>2.你注册好之后呢点击你的头像然后点击你的仓库(your profile)，上面的链接就是你的github链接了~<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/95961972.jpg" alt="github"></li>
+<li><strong>问题3.</strong>知乎的超链接怎么找？如图（刚入的知乎嘿嘿）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/28645477.jpg" alt="知乎"></li>
+<li><p><strong>问题4.</strong>QQ邮箱地址的超链接怎么搞？<br>解决方案：<br>1.登陆邮箱后，点击<strong>设置</strong><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/68289722.jpg" alt="QQ邮箱1"><br>2.点击<strong>账户</strong>，拉到最下面看到<strong>使用邮我</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/27306096.jpg" alt="QQ邮箱2"><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/5560407.jpg" alt="QQ邮箱3"><br>3.点击<strong>我要体验</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/43502974.jpg" alt="QQ邮箱-我要体验"><br>4.上面随便选一个，点击下面的<strong>获取代码</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/97835455.jpg" alt="获取代码"><br>5.我选中的部分就是咱们需要的邮箱地址了。（注意在引号之间）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/35231061.jpg" alt="邮箱链接"></p>
+<blockquote>
+<p>看一下此链接的效果吧~dāng dāng dàng dǎng~<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/5127846.jpg" alt="QQ邮箱效果"></p>
+</blockquote>
 </li>
-</ul>
-<p><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/44204841.jpg" alt="npm升级图"><br>但是又有问题了！TT但是它就像摩天轮转呀转个不停！<br>我先查看网速使用情况：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/18972637.jpg" alt=""><br>应该是这个可能是太慢了。。多等等（5分钟以后）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/4312338.jpg" alt=""><br>貌似下载好 一看版本还是原来的版本！（待我去SegmentFault瞅瞅）<br><strong>解决方法</strong>：复制<code>AppData\Roaming\npm\node_modules\npm</code>下的文件到你的NodeJS安装目录下的 <code>\node_modules\npm</code> 中，覆盖掉原来的全部文件。</p>
-<ul>
-<li><strong>问题2.</strong>安装hexo失败<br>1.首先 <code>npm install -g hexo-cli</code>失败<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/30071233.jpg" alt="hexo失败"><br><strong>我的解决方法</strong>：改用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo -g    #-g表示全局安装, npm默认为当前项目安装</div></pre></td></tr></table></figure>
+<li><p><strong>问题5.</strong>我先添加一篇写好的MD文章怎么办？<br><strong>我的解决方案：</strong>把写好的md文件拖到我们的博客的文件目录<code>source\_posts</code>下面就好了。</p>
 </li>
+<li><strong>问题6.</strong>文章还有标签？这个好玩怎么添加呢？<br>md文档的统一格式如下：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line"></div><div class="line">title: &lt;你的文章标题&gt;</div><div class="line">date: 2016-10-03 20:10:33  #日期精确到秒</div><div class="line">tags: [标签名1,标签名2，标签名3]  #添加多个标签名</div><div class="line"></div><div class="line">---</div></pre></td></tr></table></figure></li>
 </ul>
-<p>hexo -v检查是否安装成功。。。成功！<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/22966429.jpg" alt="hexo检查版本成功"><br><strong>解决方法2</strong><br>试试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo --no-optional</div></pre></td></tr></table></figure></p>
-<ul>
-<li><strong>问题3.</strong>hexo init 过程中一只卡在cloning主题那里<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/73676557.jpg" alt="cloning 主题卡"><br>后来跟同学们讨论一下，<strong>多等等就好</strong>。。<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/15605835.jpg" alt="hexo init"><br>-&gt;成功！！</li>
-<li><strong>问题4.</strong> hexo d出现 <code>ERROR Deployer not found: git</code> 错误<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/72635996.jpg" alt="hexo d 出错"><br><strong>解决方法</strong> 执行<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<p>&emsp;&emsp;上面的几个问题都是我在搭建博客时候遇到的几个问题，一共花了大概3个多小时，，大多是因为网速太渣了TT.终于弄好了~~如果大家有更好的解决方案或者遇到其他的问题都可以联系我QQ573941623，如果能百度到的问题尽量自己解决 对自己和他人都好，如果不能请找我。</p>
 
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/10/03/hexo+github搭建网站遇到的一些问题收集总结/" class="archive-article-date">
-  	<time datetime="2016-10-03T12:10:33.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
+      <a href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/" class="archive-article-date">
+  	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-github/">hexo github</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yilia/">Yilia</a></li></ul>
 	</div>
 
       
@@ -217,11 +224,15 @@
   
 <nav id="article-nav">
   
-  
-    <a href="/2016/10/03/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
-      <i class="icon-circle-right"></i>
+    <a href="/2016/10/03/更换Yilia主题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          HEXO个人博客更换Yilia主题
+        
+      </div>
     </a>
+  
   
 </nav>
 
@@ -253,7 +264,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hexo+github搭建网站遇到的一些问题收集总结" data-title="hexo+github搭建网站遇到的一些问题收集总结" data-url="http://yoursite.com/2016/10/03/hexo+github搭建网站遇到的一些问题收集总结/"></div>
+	<div class="ds-thread" data-thread-key="hexo更换yilia主题之后遇到的一些问题以及解决方案" data-title="hexo更换Yilia主题之后遇到的一些问题以及解决方案（不定期更新）" data-url="http://yoursite.com/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
