@@ -212,76 +212,6 @@
 
 
   
-    <article id="post-HEXO个人博客添加DuoShuo多说模块" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/03/HEXO个人博客添加DuoShuo多说模块/">HEXO个人博客添加DuoShuo多说模块</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>参考连接 <a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9</a><br>官方文档 <a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9</a></p>
-</blockquote>
-<p>&emsp;&emsp;Hexo默认使用的评论插件是Disqus,但是我还是支持国产，毕竟网速什么的肯定比国外的网站快啦~下面是我总计的一些步骤。本人用的是<a href="http://litten.github.io/" title="litten" target="_blank" rel="external">Yilia</a>主题。</p>
-<ol>
-<li>首先我们要注册一个<a href="http://duoshuo.com/" title="多说官网" target="_blank" rel="external">多说账号</a>~<br><a href="http://duoshuo.com/" target="_blank" rel="external">http://duoshuo.com/</a> 官网地址<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/7116362.jpg" alt="多说注册界面"></li>
-<li><p>找到我们hexo的一级目录下面的<code>_config.yml</code>配置文件，用记事本类工具打开找到<code>duoshuo</code>,改成以下代码（后面的关键字是你的<strong>多说域名的名字部分，比如<a href="http://abc.duoshuo.com" target="_blank" rel="external">http://abc.duoshuo.com</a> 那么代码里面的frankroc部分要写abc</strong>）：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">duoshuo: frankroc</div></pre></td></tr></table></figure>
-</li>
-<li><p>路径<code>themes\yilia\layout\_partial\article.ejs</code> 打开ejs文件：<br>找到(我的在最后面一段)  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.disqus_shortname)&#123; %&gt;</div><div class="line">&lt;section id=&quot;comments&quot;&gt;</div><div class="line">  &lt;div id=&quot;disqus_thread&quot;&gt;</div><div class="line">    &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;//disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
-<p>全部替换成下面的代码：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</div><div class="line">&lt;section id=&quot;comments&quot;&gt;</div><div class="line">&lt;!-- 多说评论框 start --&gt;</div><div class="line">&lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;&quot; data-title=&quot;&lt;%= post.title %&gt;&quot; data-url=&quot;&lt;%= page.permalink %&gt;&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;!-- 多说评论框 end --&gt;</div><div class="line">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">var duoshuoQuery = &#123;short_name:&apos;&lt;%= config.duoshuo_shortname %&gt;&apos;&#125;;</div><div class="line">  (function() &#123;</div><div class="line">    var ds = document.createElement(&apos;script&apos;);</div><div class="line">    ds.type = &apos;text/javascript&apos;;ds.async = true;</div><div class="line">    ds.src = (document.location.protocol == &apos;https:&apos; ? &apos;https:&apos; : &apos;http:&apos;) + &apos;//static.duoshuo.com/embed.js&apos;;</div><div class="line">    ds.charset = &apos;UTF-8&apos;;</div><div class="line">    (document.getElementsByTagName(&apos;head&apos;)[0] </div><div class="line">     || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(ds);</div><div class="line">  &#125;)();</div><div class="line">  &lt;/script&gt;</div><div class="line">&lt;!-- 多说公共JS代码 end --&gt;</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<blockquote>
-<p>博客效果如图：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/59484331.jpg" alt="博客评论区"><br>多说后台图：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/4934609.jpg" alt="多说后台图"></p>
-</blockquote>
-<p>&emsp;&emsp;开始可能一脸懵逼，但是只要你跟着做，一定ok。遇到问题的话可以浏览或者加我微博,QQ帮你解决一下。</p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/03/HEXO个人博客添加DuoShuo多说模块/" class="archive-article-date">
-  	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多说/">多说</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
-  
     <article id="post-Git的一些基本指令" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -558,6 +488,76 @@
 
 
   
+    <article id="post-HEXO个人博客添加DuoShuo多说模块" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/03/HEXO个人博客添加DuoShuo多说模块/">HEXO个人博客添加DuoShuo多说模块</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>参考连接 <a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9</a><br>官方文档 <a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9</a></p>
+</blockquote>
+<p>&emsp;&emsp;Hexo默认使用的评论插件是Disqus,但是我还是支持国产，毕竟网速什么的肯定比国外的网站快啦~下面是我总计的一些步骤。本人用的是<a href="http://litten.github.io/" title="litten" target="_blank" rel="external">Yilia</a>主题。</p>
+<ol>
+<li>首先我们要注册一个<a href="http://duoshuo.com/" title="多说官网" target="_blank" rel="external">多说账号</a>~<br><a href="http://duoshuo.com/" target="_blank" rel="external">http://duoshuo.com/</a> 官网地址<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/7116362.jpg" alt="多说注册界面"></li>
+<li><p>找到我们hexo的一级目录下面的<code>_config.yml</code>配置文件，用记事本类工具打开找到<code>duoshuo</code>,改成以下代码（后面的关键字是你的<strong>多说域名的名字部分，比如<a href="http://abc.duoshuo.com" target="_blank" rel="external">http://abc.duoshuo.com</a> 那么代码里面的frankroc部分要写abc</strong>）：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">duoshuo: frankroc</div></pre></td></tr></table></figure>
+</li>
+<li><p>路径<code>themes\yilia\layout\_partial\article.ejs</code> 打开ejs文件：<br>找到(我的在最后面一段)  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.disqus_shortname)&#123; %&gt;</div><div class="line">&lt;section id=&quot;comments&quot;&gt;</div><div class="line">  &lt;div id=&quot;disqus_thread&quot;&gt;</div><div class="line">    &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;//disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
+<p>全部替换成下面的代码：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</div><div class="line">&lt;section id=&quot;comments&quot;&gt;</div><div class="line">&lt;!-- 多说评论框 start --&gt;</div><div class="line">&lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;&quot; data-title=&quot;&lt;%= post.title %&gt;&quot; data-url=&quot;&lt;%= page.permalink %&gt;&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;!-- 多说评论框 end --&gt;</div><div class="line">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">var duoshuoQuery = &#123;short_name:&apos;&lt;%= config.duoshuo_shortname %&gt;&apos;&#125;;</div><div class="line">  (function() &#123;</div><div class="line">    var ds = document.createElement(&apos;script&apos;);</div><div class="line">    ds.type = &apos;text/javascript&apos;;ds.async = true;</div><div class="line">    ds.src = (document.location.protocol == &apos;https:&apos; ? &apos;https:&apos; : &apos;http:&apos;) + &apos;//static.duoshuo.com/embed.js&apos;;</div><div class="line">    ds.charset = &apos;UTF-8&apos;;</div><div class="line">    (document.getElementsByTagName(&apos;head&apos;)[0] </div><div class="line">     || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(ds);</div><div class="line">  &#125;)();</div><div class="line">  &lt;/script&gt;</div><div class="line">&lt;!-- 多说公共JS代码 end --&gt;</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>博客效果如图：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/59484331.jpg" alt="博客评论区"><br>多说后台图：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/4934609.jpg" alt="多说后台图"></p>
+</blockquote>
+<p>&emsp;&emsp;开始可能一脸懵逼，但是只要你跟着做，一定ok。遇到问题的话可以浏览或者加我微博,QQ帮你解决一下。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/03/HEXO个人博客添加DuoShuo多说模块/" class="archive-article-date">
+  	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多说/">多说</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-URI&amp;URLt" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -593,74 +593,6 @@
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/URI/">URI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/URl/">URl</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo更换yilia主题之后遇到的一些问题以及解决方案" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/">hexo更换Yilia主题之后遇到的一些问题以及解决方案（不定期更新）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>附上作者的github的参考链接<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia</a></p>
-</blockquote>
-<p>&emsp;&emsp;我觉得不是很详细，很多配置都得自己研究，或许作业为了培养我们的自学研究能力吧~哈哈！在研究代码过程中也遇到了很多奇奇怪怪零零散散的小问题，同样做一个问题解决记录，方便自己和他人以后再遇到此问题能够及时的解决，节约大家的时间！</p>
-<ul>
-<li><strong>问题1</strong>微博超链接到自己的主页？那么自己的主页地址是什么的？<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/79959974.jpg" alt="微博链接"><br>解决方法：<br>1.打开新浪微博后如下图，在右侧找到自己的昵称，点击它。<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/7544631.jpg" alt="1.1图片微博"><br>2.打开个人主页面，如下图，在顶部地址栏中可以看到有几段地址，把后面的东西删除掉剩下包括一堆数字以及前面的部分。然后回车<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/10589765.jpg" alt="1.2链接删除"><br>3.回车之后加载出的地址便是我们需要的地址了~如下图<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/48371272.jpg" alt="1.3正确分享地址"></li>
-<li><strong>问题2.</strong>github的链接在哪里？<br>解决方法：<br>1.首先你得有github账户对吧？至于怎么申请？来有教程<br><a href="http://jingyan.baidu.com/article/455a9950abe0ada167277864.html" target="_blank" rel="external">http://jingyan.baidu.com/article/455a9950abe0ada167277864.html</a> &lt;-百度教程链接<br>2.你注册好之后呢点击你的头像然后点击你的仓库(your profile)，上面的链接就是你的github链接了~<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/95961972.jpg" alt="github"></li>
-<li><strong>问题3.</strong>知乎的超链接怎么找？如图（刚入的知乎嘿嘿）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/28645477.jpg" alt="知乎"></li>
-<li><p><strong>问题4.</strong>QQ邮箱地址的超链接怎么搞？<br>解决方案：<br>1.登陆邮箱后，点击<strong>设置</strong><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/68289722.jpg" alt="QQ邮箱1"><br>2.点击<strong>账户</strong>，拉到最下面看到<strong>使用邮我</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/27306096.jpg" alt="QQ邮箱2"><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/5560407.jpg" alt="QQ邮箱3"><br>3.点击<strong>我要体验</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/43502974.jpg" alt="QQ邮箱-我要体验"><br>4.上面随便选一个，点击下面的<strong>获取代码</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/97835455.jpg" alt="获取代码"><br>5.我选中的部分就是咱们需要的邮箱地址了。（注意在引号之间）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/35231061.jpg" alt="邮箱链接"></p>
-<blockquote>
-<p>看一下此链接的效果吧~dāng dāng dàng dǎng~<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/5127846.jpg" alt="QQ邮箱效果"></p>
-</blockquote>
-</li>
-<li><p><strong>问题5.</strong>我先添加一篇写好的MD文章怎么办？<br><strong>我的解决方案：</strong>把写好的md文件拖到我们的博客的文件目录<code>source\_posts</code>下面就好了。</p>
-</li>
-<li><strong>问题6.</strong>文章还有标签？这个好玩怎么添加呢？<br>md文档的统一格式如下：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line"></div><div class="line">title: &lt;你的文章标题&gt;</div><div class="line">date: 2016-10-03 20:10:33  #日期精确到秒</div><div class="line">tags: [标签名1,标签名2，标签名3]  #添加多个标签名</div><div class="line">tag:</div><div class="line">	-  标签名1</div><div class="line">	-  标签名2</div><div class="line">	-  标签名3            #标签的另一种格式 </div><div class="line">---</div></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/" class="archive-article-date">
-  	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yilia/">Yilia</a></li></ul>
 	</div>
 
       
@@ -803,6 +735,74 @@
 
 
   
+    <article id="post-hexo更换yilia主题之后遇到的一些问题以及解决方案" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/">hexo更换Yilia主题之后遇到的一些问题以及解决方案（不定期更新）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>附上作者的github的参考链接<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia</a></p>
+</blockquote>
+<p>&emsp;&emsp;我觉得不是很详细，很多配置都得自己研究，或许作业为了培养我们的自学研究能力吧~哈哈！在研究代码过程中也遇到了很多奇奇怪怪零零散散的小问题，同样做一个问题解决记录，方便自己和他人以后再遇到此问题能够及时的解决，节约大家的时间！</p>
+<ul>
+<li><strong>问题1</strong>微博超链接到自己的主页？那么自己的主页地址是什么的？<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/79959974.jpg" alt="微博链接"><br>解决方法：<br>1.打开新浪微博后如下图，在右侧找到自己的昵称，点击它。<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/7544631.jpg" alt="1.1图片微博"><br>2.打开个人主页面，如下图，在顶部地址栏中可以看到有几段地址，把后面的东西删除掉剩下包括一堆数字以及前面的部分。然后回车<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/10589765.jpg" alt="1.2链接删除"><br>3.回车之后加载出的地址便是我们需要的地址了~如下图<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/48371272.jpg" alt="1.3正确分享地址"></li>
+<li><strong>问题2.</strong>github的链接在哪里？<br>解决方法：<br>1.首先你得有github账户对吧？至于怎么申请？来有教程<br><a href="http://jingyan.baidu.com/article/455a9950abe0ada167277864.html" target="_blank" rel="external">http://jingyan.baidu.com/article/455a9950abe0ada167277864.html</a> &lt;-百度教程链接<br>2.你注册好之后呢点击你的头像然后点击你的仓库(your profile)，上面的链接就是你的github链接了~<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/95961972.jpg" alt="github"></li>
+<li><strong>问题3.</strong>知乎的超链接怎么找？如图（刚入的知乎嘿嘿）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/28645477.jpg" alt="知乎"></li>
+<li><p><strong>问题4.</strong>QQ邮箱地址的超链接怎么搞？<br>解决方案：<br>1.登陆邮箱后，点击<strong>设置</strong><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/68289722.jpg" alt="QQ邮箱1"><br>2.点击<strong>账户</strong>，拉到最下面看到<strong>使用邮我</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/27306096.jpg" alt="QQ邮箱2"><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/5560407.jpg" alt="QQ邮箱3"><br>3.点击<strong>我要体验</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/43502974.jpg" alt="QQ邮箱-我要体验"><br>4.上面随便选一个，点击下面的<strong>获取代码</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/97835455.jpg" alt="获取代码"><br>5.我选中的部分就是咱们需要的邮箱地址了。（注意在引号之间）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/35231061.jpg" alt="邮箱链接"></p>
+<blockquote>
+<p>看一下此链接的效果吧~dāng dāng dàng dǎng~<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/5127846.jpg" alt="QQ邮箱效果"></p>
+</blockquote>
+</li>
+<li><p><strong>问题5.</strong>我先添加一篇写好的MD文章怎么办？<br><strong>我的解决方案：</strong>把写好的md文件拖到我们的博客的文件目录<code>source\_posts</code>下面就好了。</p>
+</li>
+<li><strong>问题6.</strong>文章还有标签？这个好玩怎么添加呢？<br>md文档的统一格式如下：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line"></div><div class="line">title: &lt;你的文章标题&gt;</div><div class="line">date: 2016-10-03 20:10:33  #日期精确到秒</div><div class="line">tags: [标签名1,标签名2，标签名3]  #添加多个标签名</div><div class="line">tag:</div><div class="line">	-  标签名1</div><div class="line">	-  标签名2</div><div class="line">	-  标签名3            #标签的另一种格式 </div><div class="line">---</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/" class="archive-article-date">
+  	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yilia/">Yilia</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-html和xml和xhtml" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -821,19 +821,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>首先先搞清楚什么是html？什么是xml？  什么是html？<br>简单的说，<a href="http://baike.baidu.com/link?url=UxS9h-yVqErUfaavajSCAuL39hiV5TZuqlQ_PHsTS5kZIWGY4vdgZ_mB6AYKQ980Xd_acWGcog6EvMiZwRRvnK" title="HTML" target="_blank" rel="external"> HTML</a>是超文本指标语言的因为缩写，<a href="http://baike.baidu.com/view/159832.htm?fromtitle=xml&amp;fromid=86251&amp;type=syn" title="XML" target="_blank" rel="external">XML</a>是扩展标记语言的缩写，<a href="http://baike.baidu.com/view/15906.htm" title="XHTMl" target="_blank" rel="external">XHTML</a>是可扩展超文本标记语言，是一种置标语言，表现方式与超文本标记语言（HTML）类似，不过语法上更加严格。</li>
-<li><p>他们又有什么关系呢？（html跟xhtml暂且统称为html）</p>
-<p> 2.1  首先他们都是标记语言，是一种特殊的文本标记，用途当然是用于传输数据和现实信息了.  </p>
-<p> 2.2xml与html在形式上很相似，比如都有类似这样的符号<xx>字符</xx>,在早期的网页设计中重要是用html来表示信息，浏览器可以解释执行它。html的最高版本是5，现在基本上被XHTML（可拓展超文本指标语言）所代替，因为它更接近xml，有更加严格的语法，比如标记符号必须要小些，必须要有结束标记，这一点适合xml相同 的。</p>
-<p> 2.3 因为目前的浏览器还无法识别xml语言，但是xml确实是信息交换的标准和简易的方式，所以为了向xml过渡才出现XHTML.</p>
-</li>
-<li><p>那么xml与XHTML（或是html）有什么区别呢？</p>
-<p> 3.1 XHTML（或是html）只能用于web（也就是网页中），而xml则不同，它是信息交换的标准语言，他可以跨平台进行信息的交流，比如电脑与手机  </p>
-<p> 3.2 xml的标记灵活多变，你可以起名字比如<student>学生</student>，但是XHTML和html是不行的，他两是写给浏览器看的，自己定义的就不会别识别，所以<xx></xx>这样的符号是约定，比如<a href="http://www.baidu.com" target="_blank" rel="external">百度</a>，就是一个连接百度的超链接标记。</p>
-</li>
-</ol>
+        <h5 id="1-首先先搞清楚什么是html？什么是xml？-什么是html？"><a href="#1-首先先搞清楚什么是html？什么是xml？-什么是html？" class="headerlink" title="1.首先先搞清楚什么是html？什么是xml？  什么是html？"></a>1.首先先搞清楚什么是html？什么是xml？  什么是html？</h5><p>简单的说，<a href="http://baike.baidu.com/link?url=UxS9h-yVqErUfaavajSCAuL39hiV5TZuqlQ_PHsTS5kZIWGY4vdgZ_mB6AYKQ980Xd_acWGcog6EvMiZwRRvnK" title="HTML" target="_blank" rel="external"> HTML</a>是超文本指标语言的因为缩写，<a href="http://baike.baidu.com/view/159832.htm?fromtitle=xml&amp;fromid=86251&amp;type=syn" title="XML" target="_blank" rel="external">XML</a>是扩展标记语言的缩写，<a href="http://baike.baidu.com/view/15906.htm" title="XHTMl" target="_blank" rel="external">XHTML</a>是可扩展超文本标记语言，是一种置标语言，表现方式与超文本标记语言（HTML）类似，不过语法上更加严格。</p>
+<h5 id="2-他们又有什么关系呢？（html跟xhtml暂且统称为html）"><a href="#2-他们又有什么关系呢？（html跟xhtml暂且统称为html）" class="headerlink" title="2.他们又有什么关系呢？（html跟xhtml暂且统称为html）"></a>2.他们又有什么关系呢？（html跟xhtml暂且统称为html）</h5><pre><code>2.1 首先他们都是标记语言，是一种特殊的文本标记，用途当然是用于传输数据和现实信息了.  
 
+2.2 xml与html在形式上很相似，比如都有类似这样的符号&lt;xx&gt;字符&lt;/xx&gt;,在早期的网页设计中重要是用html来表示信息，浏览器可以解释执行它。html的最高版本是5，现在基本上被XHTML（可拓展超文本指标语言）所代替，因为它更接近xml，有更加严格的语法，比如标记符号必须要小些，必须要有结束标记，这一点适合xml相同 的。
+
+2.3 因为目前的浏览器还无法识别xml语言，但是xml确实是信息交换的标准和简易的方式，所以为了向xml过渡才出现XHTML.
+</code></pre><h5 id="3-那么xml与XHTML（或是html）有什么区别呢？"><a href="#3-那么xml与XHTML（或是html）有什么区别呢？" class="headerlink" title="3.那么xml与XHTML（或是html）有什么区别呢？"></a>3.那么xml与XHTML（或是html）有什么区别呢？</h5><pre><code>3.1 XHTML（或是html）只能用于web（也就是网页中），而xml则不同，它是信息交换的标准语言，他可以跨平台进行信息的交流，比如电脑与手机  
+
+3.2 xml的标记灵活多变，你可以起名字比如&lt;student&gt;学生&lt;/student&gt;，但是XHTML和html是不行的，他两是写给浏览器看的，自己定义的就不会别识别，所以&lt;xx&gt;&lt;/xx&gt;这样的符号是约定，比如&lt;a href= http://www.baidu.com&gt;百度&lt;/a&gt;，就是一个连接百度的超链接标记。
+</code></pre>
       
     </div>
     <div class="article-info article-info-index">
