@@ -163,10 +163,19 @@
 <p>首先附上我参考的简书博主地址<br>1.<a href="http://www.jianshu.com/p/06c0fb6f8b4d" title="最简单的Hexo搭建博客教程" target="_blank" rel="external">http://www.jianshu.com/p/06c0fb6f8b4d</a>作者：hedge_hog 题目：最简单的Hexo搭建博客教程<br>2.<a href="http://www.jianshu.com/p/465830080ea9" title="HEXO+Github,搭建属于自己的博客" target="_blank" rel="external">http://www.jianshu.com/p/465830080ea9</a> 作者：潘柏信 题目：HEXO+Github,搭建属于自己的博客<br>3.<a href="http://www.jianshu.com/p/b7886271e21a" title="Hexo安装和配置" target="_blank" rel="external">http://www.jianshu.com/p/b7886271e21a</a>作者：holaOla 题目：Hexo安装和配置</p>
 </blockquote>
 <ul>
-<li><strong>问题1</strong>：nodejs自带的npm版本太低我要升级！怎么升级？(这个问题貌似不是很影响博客可以无视了)<br><strong>初始方案</strong>：试试命令 <strong>npm install npm</strong>（前提你安装了nodejs）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/44204841.jpg" alt="npm升级图"><br>但是又有问题了！TT但是它就像摩天轮转呀转个不停！<br>我先查看网速使用情况：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/18972637.jpg" alt=""><br>应该是这个可能是太慢了。。多等等（5分钟以后）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/4312338.jpg" alt=""><br>貌似下载好 一看版本还是原来的版本！（待我去SegmentFault瞅瞅）<br><strong>解决方法</strong>：复制<code>AppData\Roaming\npm\node_modules\npm</code>下的文件到你的NodeJS安装目录下的 <code>\node_modules\npm</code> 中，覆盖掉原来的全部文件。</li>
-<li><strong>问题2.</strong>安装hexo失败<br>1.首先 <code>npm install -g hexo-cli</code>失败<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/30071233.jpg" alt="hexo失败"><br><strong>我的解决方法</strong>：改用<code>npm install hexo -g</code>  #-g表示全局安装, npm默认为当前项目安装<br>hexo -v检查是否安装成功。。。成功！<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/22966429.jpg" alt="hexo检查版本成功"><br><strong>解决方法2</strong>试试<code>npm install hexo --no-optional</code></li>
+<li><strong>问题1</strong>：nodejs自带的npm版本太低我要升级！怎么升级？(这个问题貌似不是很影响博客可以无视了)<br><strong>初始方案</strong>：试试命令 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install npm（前提你安装了nodejs）</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/44204841.jpg" alt="npm升级图"><br>但是又有问题了！TT但是它就像摩天轮转呀转个不停！<br>我先查看网速使用情况：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/18972637.jpg" alt=""><br>应该是这个可能是太慢了。。多等等（5分钟以后）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/4312338.jpg" alt=""><br>貌似下载好 一看版本还是原来的版本！（待我去SegmentFault瞅瞅）<br><strong>解决方法</strong>：复制<code>AppData\Roaming\npm\node_modules\npm</code>下的文件到你的NodeJS安装目录下的 <code>\node_modules\npm</code> 中，覆盖掉原来的全部文件。</p>
+<ul>
+<li><strong>问题2.</strong>安装hexo失败<br>1.首先 <code>npm install -g hexo-cli</code>失败<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/30071233.jpg" alt="hexo失败"><br><strong>我的解决方法</strong>：改用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo -g    #-g表示全局安装, npm默认为当前项目安装</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>hexo -v检查是否安装成功。。。成功！<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/22966429.jpg" alt="hexo检查版本成功"><br><strong>解决方法2</strong><br>试试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo --no-optional</div></pre></td></tr></table></figure></p>
+<ul>
 <li><strong>问题3.</strong>hexo init 过程中一只卡在cloning主题那里<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/73676557.jpg" alt="cloning 主题卡"><br>后来跟同学们讨论一下，<strong>多等等就好</strong>。。<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/15605835.jpg" alt="hexo init"><br>-&gt;成功！！</li>
-<li><strong>问题4.</strong> hexo d出现 <code>ERROR Deployer not found: git</code> 错误<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/72635996.jpg" alt="hexo d 出错"><br><strong>解决方法</strong> 执行<code>npm install hexo-deployer-git --save</code></li>
+<li><strong>问题4.</strong> hexo d出现 <code>ERROR Deployer not found: git</code> 错误<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/72635996.jpg" alt="hexo d 出错"><br><strong>解决方法</strong> 执行<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+</li>
 </ul>
 <hr>
 <p>&emsp;&emsp;上面的几个问题都是我在搭建博客时候遇到的几个问题，一共花了大概3个多小时，，大多是因为网速太渣了TT.终于弄好了~~如果大家有更好的解决方案或者遇到其他的问题都可以联系我QQ573941623，如果能百度到的问题尽量自己解决 对自己和他人都好，如果不能请找我。</p>
