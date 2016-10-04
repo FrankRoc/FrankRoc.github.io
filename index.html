@@ -140,6 +140,85 @@
       <div class="body-wrap">
         
   
+    <article id="post-xsheel连不上远程centos系统" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/04/xsheel连不上远程centos系统/">关于Xshell和Putty连不上远程centOS的问题解决过程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;首先，今天通过大神知道了免流量这个神器！什么？你还不知道免流量？哈哈哈 如果你看到这篇文章那么你已经赚了不知道多少的流量费用了。（此处应该有掌声）通俗点讲免流量就是有无限的手机流量让你尽情的挥霍！（想想爽啊哈哈哈）网上有很多一键安装服务器的教程这里我就不啰嗦了大家可以去百度下^-^  </p>
+<hr>
+<ol>
+<li>首先我搞了一台<a href="https://passport.qcloud.com/" title="腾讯云" target="_blank" rel="external">腾讯云</a>服务器，重装了centOS6.5 64位的系统（教程推荐的版本），然后我设置了centOS的登陆密码！开机的时候问题来了！<strong>账号输入root没有问题，但是在输入密码的时候我输了半天竟然不显示密码应该有的星号，是什么都没有好吧</strong><blockquote>
+<p>解决方法：只管输就密码好了，系统默认就是什么都不显示。（好吧这问题我也是鼓捣了半天自己好zz）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-9-29/3784160.jpg" alt=""></p>
+</blockquote>
+</li>
+<li>然后我们就可以用我们就可以开心愉快的在网页登陆了！<br>（网页登陆成功）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-9-30/91018565.jpg" alt=""><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-9-30/23592804.jpg" alt=""><ul>
+<li>但是网页版的很不方便不会复制粘贴有没有！不能看到前面的内容有没有！（反正目前我是看不到TT）</li>
+<li>很好，我开始用Xshell工具和Putty开始连接远程Linux服务器然后是这样子的<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-9-30/27776391.jpg" alt=""><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-9-30/12931035.jpg" alt=""></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p><strong>解决方法</strong>：<br>极其可能是因为腾讯云的22号端口没有打开，如图22端口 后面显示的关联主机数不应该是0应该是1，如果是0请点击加入云主机加入。<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-1/35621654.jpg" alt=""><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-1/21195564.jpg" alt="">  </p>
+</blockquote>
+<ul>
+<li>然后我就华丽丽的通过xsheel连上了，Putty连不上也是这个原因，我就不测试啦（好吧我懒），反正一个xshell就够用啦~</li>
+</ul>
+<hr>
+<p>聊一聊免流：搭建免流服务器 现在是2016.10.1日各种找包找资源 做一个记录吧~</p>
+<ol>
+<li>wget <a href="http://sbwml.cn/openvpn" target="_blank" rel="external">http://sbwml.cn/openvpn</a> &amp;&amp; bash openvpn<br>此方法直接不能安装错误404 pass</li>
+<li>wget <a href="http://sbwml.cn/vpn6;chmod" target="_blank" rel="external">http://sbwml.cn/vpn6;chmod</a> +x vpn6;./vpn6<br>此代码可以安装（<a href="http://www.2ifeng.com/thread-1715-1-1.html教程地址）" target="_blank" rel="external">http://www.2ifeng.com/thread-1715-1-1.html教程地址）</a><br>但是最后连接的时候永远是timeout….(晕死)</li>
+<li>wget <a href="http://sbwml.cn/vpn7" target="_blank" rel="external">http://sbwml.cn/vpn7</a> &amp;&amp; bash vpn7<br>这个可以安装但是不能下载证书。。。</li>
+<li>最后我选择了万能的淘宝<br>连接成功，但是不是很稳定。祝你好运找到适合自己的免流服务器~<br>有大神搭建成功的希望可以分享一下~</li>
+<li>后来知道免流代码是比较难弄的。所以放弃自己搭建了。。</li>
+</ol>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/04/xsheel连不上远程centos系统/" class="archive-article-date">
+  	<time datetime="2016-10-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-04</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xshell/">Xshell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centOS/">centOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/免流量/">免流量</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-hexo+github搭建网站遇到的一些问题收集总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -466,7 +545,63 @@
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多说/">多说</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-URI&amp;URLt" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/03/URI&URLt/">URl和URI</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/31908379.jpg" alt="uri&gt;url+uri"></p>
+<p><a href="http://baike.baidu.com/link?url=sSsC5wFyGyNfKV_qOZ1B1KwWJhl_31lzkbHIcexwHWnNrknriD5uLS4rYp_zqfx-vcStFzVIFNGHf9M2KapAYq" title="URI" target="_blank" rel="external">URI</a>:Uniform Resource Identifier.<br><a href="http://baike.baidu.com/view/1496.htm" title="URL" target="_blank" rel="external">URL</a>:Uniform Resource Locator.<br><a href="http://baike.baidu.com/view/160670.htm" title="URn" target="_blank" rel="external">URN</a>:Uniform Resouce Name.</p>
+<hr>
+<p>URL时URI的一种，URL是URI，但URI不一定是URL，还可能是其他，比如URN.<br>维金百科如是说：URN就像一个人的名字，URL就像一个人的地址;URN确定了东西的身份，URL提供了找到他的方式。<br> <strong>目前用URI的说法应该比较专业 一点，URL这个术语正在被抛弃</strong><br>比如：file.hp.com 这是URI,但不是URL 系统可能对很对协议和端口都做出正确的反应。<a href="http://file.hp.com" target="_blank" rel="external">http://file.hp.com</a> 和 ftp://file.hp.com可能是完全不同的内容。  </p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语  "></a><strong>结语</strong>  </h2><p>If you don’t mind being “that guy”,<strong>URI</strong> is probably the more accurate term to use.But if you are in the linguist/“use what’s understood” camp ,feel free to go with <strong>URL</strong>.</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/03/URI&URLt/" class="archive-article-date">
+  	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/URI/">URI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/URl/">URl</a></li></ul>
 	</div>
 
       
@@ -558,7 +693,7 @@
 
 
   
-    <article id="post-URI&amp;URLt" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-hexo更换yilia主题之后遇到的一些问题以及解决方案" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -568,7 +703,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/03/URI&URLt/">URl和URI</a>
+      <a class="article-title" href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/">hexo更换Yilia主题之后遇到的一些问题以及解决方案（不定期更新）</a>
     </h1>
   
 
@@ -576,23 +711,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/31908379.jpg" alt="uri&gt;url+uri"></p>
-<p><a href="http://baike.baidu.com/link?url=sSsC5wFyGyNfKV_qOZ1B1KwWJhl_31lzkbHIcexwHWnNrknriD5uLS4rYp_zqfx-vcStFzVIFNGHf9M2KapAYq" title="URI" target="_blank" rel="external">URI</a>:Uniform Resource Identifier.<br><a href="http://baike.baidu.com/view/1496.htm" title="URL" target="_blank" rel="external">URL</a>:Uniform Resource Locator.<br><a href="http://baike.baidu.com/view/160670.htm" title="URn" target="_blank" rel="external">URN</a>:Uniform Resouce Name.</p>
-<hr>
-<p>URL时URI的一种，URL是URI，但URI不一定是URL，还可能是其他，比如URN.<br>维金百科如是说：URN就像一个人的名字，URL就像一个人的地址;URN确定了东西的身份，URL提供了找到他的方式。<br> <strong>目前用URI的说法应该比较专业 一点，URL这个术语正在被抛弃</strong><br>比如：file.hp.com 这是URI,但不是URL 系统可能对很对协议和端口都做出正确的反应。<a href="http://file.hp.com" target="_blank" rel="external">http://file.hp.com</a> 和 ftp://file.hp.com可能是完全不同的内容。  </p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语  "></a><strong>结语</strong>  </h2><p>If you don’t mind being “that guy”,<strong>URI</strong> is probably the more accurate term to use.But if you are in the linguist/“use what’s understood” camp ,feel free to go with <strong>URL</strong>.</p>
+        <blockquote>
+<p>附上作者的github的参考链接<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia</a></p>
+</blockquote>
+<p>&emsp;&emsp;我觉得不是很详细，很多配置都得自己研究，或许作业为了培养我们的自学研究能力吧~哈哈！在研究代码过程中也遇到了很多奇奇怪怪零零散散的小问题，同样做一个问题解决记录，方便自己和他人以后再遇到此问题能够及时的解决，节约大家的时间！</p>
+<ul>
+<li><strong>问题1</strong>微博超链接到自己的主页？那么自己的主页地址是什么的？<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/79959974.jpg" alt="微博链接"><br>解决方法：<br>1.打开新浪微博后如下图，在右侧找到自己的昵称，点击它。<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/7544631.jpg" alt="1.1图片微博"><br>2.打开个人主页面，如下图，在顶部地址栏中可以看到有几段地址，把后面的东西删除掉剩下包括一堆数字以及前面的部分。然后回车<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/10589765.jpg" alt="1.2链接删除"><br>3.回车之后加载出的地址便是我们需要的地址了~如下图<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/48371272.jpg" alt="1.3正确分享地址"></li>
+<li><strong>问题2.</strong>github的链接在哪里？<br>解决方法：<br>1.首先你得有github账户对吧？至于怎么申请？来有教程<br><a href="http://jingyan.baidu.com/article/455a9950abe0ada167277864.html" target="_blank" rel="external">http://jingyan.baidu.com/article/455a9950abe0ada167277864.html</a> &lt;-百度教程链接<br>2.你注册好之后呢点击你的头像然后点击你的仓库(your profile)，上面的链接就是你的github链接了~<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/95961972.jpg" alt="github"></li>
+<li><strong>问题3.</strong>知乎的超链接怎么找？如图（刚入的知乎嘿嘿）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/28645477.jpg" alt="知乎"></li>
+<li><p><strong>问题4.</strong>QQ邮箱地址的超链接怎么搞？<br>解决方案：<br>1.登陆邮箱后，点击<strong>设置</strong><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/68289722.jpg" alt="QQ邮箱1"><br>2.点击<strong>账户</strong>，拉到最下面看到<strong>使用邮我</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/27306096.jpg" alt="QQ邮箱2"><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/5560407.jpg" alt="QQ邮箱3"><br>3.点击<strong>我要体验</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/43502974.jpg" alt="QQ邮箱-我要体验"><br>4.上面随便选一个，点击下面的<strong>获取代码</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/97835455.jpg" alt="获取代码"><br>5.我选中的部分就是咱们需要的邮箱地址了。（注意在引号之间）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/35231061.jpg" alt="邮箱链接"></p>
+<blockquote>
+<p>看一下此链接的效果吧~dāng dāng dàng dǎng~<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/5127846.jpg" alt="QQ邮箱效果"></p>
+</blockquote>
+</li>
+<li><p><strong>问题5.</strong>我先添加一篇写好的MD文章怎么办？<br><strong>我的解决方案：</strong>把写好的md文件拖到我们的博客的文件目录<code>source\_posts</code>下面就好了。</p>
+</li>
+<li><strong>问题6.</strong>文章还有标签？这个好玩怎么添加呢？<br>md文档的统一格式如下：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line"></div><div class="line">title: &lt;你的文章标题&gt;</div><div class="line">date: 2016-10-03 20:10:33  #日期精确到秒</div><div class="line">tags: [标签名1,标签名2，标签名3]  #添加多个标签名</div><div class="line">tag:</div><div class="line">	-  标签名1</div><div class="line">	-  标签名2</div><div class="line">	-  标签名3            #标签的另一种格式 </div><div class="line">---</div></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/10/03/URI&URLt/" class="archive-article-date">
+      <a href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/" class="archive-article-date">
   	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/URI/">URI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/URl/">URl</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yilia/">Yilia</a></li></ul>
 	</div>
 
       
@@ -735,74 +882,6 @@
 
 
   
-    <article id="post-hexo更换yilia主题之后遇到的一些问题以及解决方案" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/">hexo更换Yilia主题之后遇到的一些问题以及解决方案（不定期更新）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>附上作者的github的参考链接<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia</a></p>
-</blockquote>
-<p>&emsp;&emsp;我觉得不是很详细，很多配置都得自己研究，或许作业为了培养我们的自学研究能力吧~哈哈！在研究代码过程中也遇到了很多奇奇怪怪零零散散的小问题，同样做一个问题解决记录，方便自己和他人以后再遇到此问题能够及时的解决，节约大家的时间！</p>
-<ul>
-<li><strong>问题1</strong>微博超链接到自己的主页？那么自己的主页地址是什么的？<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/79959974.jpg" alt="微博链接"><br>解决方法：<br>1.打开新浪微博后如下图，在右侧找到自己的昵称，点击它。<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/7544631.jpg" alt="1.1图片微博"><br>2.打开个人主页面，如下图，在顶部地址栏中可以看到有几段地址，把后面的东西删除掉剩下包括一堆数字以及前面的部分。然后回车<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/10589765.jpg" alt="1.2链接删除"><br>3.回车之后加载出的地址便是我们需要的地址了~如下图<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/48371272.jpg" alt="1.3正确分享地址"></li>
-<li><strong>问题2.</strong>github的链接在哪里？<br>解决方法：<br>1.首先你得有github账户对吧？至于怎么申请？来有教程<br><a href="http://jingyan.baidu.com/article/455a9950abe0ada167277864.html" target="_blank" rel="external">http://jingyan.baidu.com/article/455a9950abe0ada167277864.html</a> &lt;-百度教程链接<br>2.你注册好之后呢点击你的头像然后点击你的仓库(your profile)，上面的链接就是你的github链接了~<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/95961972.jpg" alt="github"></li>
-<li><strong>问题3.</strong>知乎的超链接怎么找？如图（刚入的知乎嘿嘿）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/28645477.jpg" alt="知乎"></li>
-<li><p><strong>问题4.</strong>QQ邮箱地址的超链接怎么搞？<br>解决方案：<br>1.登陆邮箱后，点击<strong>设置</strong><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/68289722.jpg" alt="QQ邮箱1"><br>2.点击<strong>账户</strong>，拉到最下面看到<strong>使用邮我</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/27306096.jpg" alt="QQ邮箱2"><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/5560407.jpg" alt="QQ邮箱3"><br>3.点击<strong>我要体验</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/43502974.jpg" alt="QQ邮箱-我要体验"><br>4.上面随便选一个，点击下面的<strong>获取代码</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/97835455.jpg" alt="获取代码"><br>5.我选中的部分就是咱们需要的邮箱地址了。（注意在引号之间）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/35231061.jpg" alt="邮箱链接"></p>
-<blockquote>
-<p>看一下此链接的效果吧~dāng dāng dàng dǎng~<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/5127846.jpg" alt="QQ邮箱效果"></p>
-</blockquote>
-</li>
-<li><p><strong>问题5.</strong>我先添加一篇写好的MD文章怎么办？<br><strong>我的解决方案：</strong>把写好的md文件拖到我们的博客的文件目录<code>source\_posts</code>下面就好了。</p>
-</li>
-<li><strong>问题6.</strong>文章还有标签？这个好玩怎么添加呢？<br>md文档的统一格式如下：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line"></div><div class="line">title: &lt;你的文章标题&gt;</div><div class="line">date: 2016-10-03 20:10:33  #日期精确到秒</div><div class="line">tags: [标签名1,标签名2，标签名3]  #添加多个标签名</div><div class="line">tag:</div><div class="line">	-  标签名1</div><div class="line">	-  标签名2</div><div class="line">	-  标签名3            #标签的另一种格式 </div><div class="line">---</div></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/" class="archive-article-date">
-  	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yilia/">Yilia</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
-  
     <article id="post-html和xml和xhtml" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -923,7 +1002,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/URI/" style="font-size: 10px;">URI</a> <a href="/tags/URl/" style="font-size: 10px;">URl</a> <a href="/tags/Yilia/" style="font-size: 20px;">Yilia</a> <a href="/tags/hexo-github/" style="font-size: 10px;">hexo github</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/xhtml/" style="font-size: 10px;">xhtml</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/多说/" style="font-size: 15px;">多说</a> <a href="/tags/换主题/" style="font-size: 15px;">换主题</a>
+    				<a href="/tags/URI/" style="font-size: 10px;">URI</a> <a href="/tags/URl/" style="font-size: 10px;">URl</a> <a href="/tags/Xshell/" style="font-size: 10px;">Xshell</a> <a href="/tags/Yilia/" style="font-size: 20px;">Yilia</a> <a href="/tags/centOS/" style="font-size: 10px;">centOS</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo-github/" style="font-size: 10px;">hexo github</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/xhtml/" style="font-size: 10px;">xhtml</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/免流量/" style="font-size: 10px;">免流量</a> <a href="/tags/多说/" style="font-size: 10px;">多说</a> <a href="/tags/换主题/" style="font-size: 15px;">换主题</a>
     			</div>
     	</section>
     
