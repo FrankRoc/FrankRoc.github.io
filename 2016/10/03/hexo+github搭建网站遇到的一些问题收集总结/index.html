@@ -24,7 +24,7 @@
 <meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/73676557.jpg">
 <meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/15605835.jpg">
 <meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-3/72635996.jpg">
-<meta property="og:updated_time" content="2016-10-04T07:55:45.505Z">
+<meta property="og:updated_time" content="2016-10-04T12:06:10.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+github搭建网站遇到的一些问题收集总结">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;我是在看人家大神的简书来搭建个人博客的，但还是遇到了很多问题。这里，在等待安装的空闲时间写点错误总结。
@@ -182,7 +182,8 @@
 </ul>
 <p><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/44204841.jpg" alt="npm升级图"><br>但是又有问题了！TT但是它就像摩天轮转呀转个不停！<br>我先查看网速使用情况：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/18972637.jpg" alt=""><br>应该是这个可能是太慢了。。多等等（5分钟以后）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/4312338.jpg" alt=""><br>貌似下载好 一看版本还是原来的版本！（待我去SegmentFault瞅瞅）<br><strong>解决方法</strong>：复制<code>AppData\Roaming\npm\node_modules\npm</code>下的文件到你的NodeJS安装目录下的 <code>\node_modules\npm</code> 中，覆盖掉原来的全部文件。</p>
 <ul>
-<li><strong>问题2.</strong>安装hexo失败<br>1.首先 <code>npm install -g hexo-cli</code>失败<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/30071233.jpg" alt="hexo失败"><br><strong>我的解决方法</strong>：改用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo -g    #-g表示全局安装, npm默认为当前项目安装</div></pre></td></tr></table></figure>
+<li><strong>问题2.</strong>安装hexo失败<br>1.首先 <code>npm install -g hexo-cli</code>失败<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/30071233.jpg" alt="hexo失败"><a id="more"></a>
+<strong>我的解决方法</strong>：改用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo -g    #-g表示全局安装, npm默认为当前项目安装</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>hexo -v检查是否安装成功。。。成功！<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/22966429.jpg" alt="hexo检查版本成功"><br><strong>解决方法2</strong><br>试试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo --no-optional</div></pre></td></tr></table></figure></p>
