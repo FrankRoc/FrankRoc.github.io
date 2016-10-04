@@ -291,7 +291,7 @@
 
 
   
-    <article id="post-Git的一些基本指令" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-HEXO个人博客添加DuoShuo多说模块" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -301,7 +301,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/03/Git的一些基本指令/">git的一些基本指令</a>
+      <a class="article-title" href="/2016/10/03/HEXO个人博客添加DuoShuo多说模块/">HEXO个人博客添加DuoShuo多说模块</a>
     </h1>
   
 
@@ -309,243 +309,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p>查看当前文件内容列表（本地仓库各个文件名字以及格式）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls (file_name)</div></pre></td></tr></table></figure>
-</li>
-<li><p>随时掌握工作区</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git status</div></pre></td></tr></table></figure>
-</li>
-<li><p>查询改文件改变情况</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git diff</div></pre></td></tr></table></figure>
-</li>
-<li><p>git log  显示从最近到最远的提交日志</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git log</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p> git log –pretty=oneline 信息比较简单输出  </p>
-<ul>
-<li>由过去穿越到未来的版本，查看所有日志<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reflog</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>git reflog 记录你的每一次命令，也可以通过此方法找Commit id(非常不错的方法)。</p>
-<ul>
-<li>回退版本到<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard HEAD^</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>用<code>HEAD</code>表示当前版本，也就是最新的提交3628164…882e1e0（注意我的提交ID和你的肯定不一样），上一个版本就是<code>HEAD^</code>，上上一个版本就是<code>HEAD^^</code>，当然往上100个版本写100个^比较容易数不过来，所以写成<strong>HEAD~100</strong>。</p>
-<ul>
-<li>获取文件内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cat &quot;filename&quot;</div></pre></td></tr></table></figure>
-</li>
-</ul>
+        <blockquote>
+<p>参考连接 <a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9</a><br>官方文档 <a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9</a></p>
 </blockquote>
-<ul>
-<li><strong>版本号（commit id）</strong>“首先要知道回退的版本号，其次版本号不一定要写全，但是也不能太少否则Git会匹配多个版本号造成混乱。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
-<li><strong><code>HEAD</code></strong> 指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<strong><code>Git reset --hard commit_id</code></strong>.</li>
-<li>在回退之前，可以用<strong><code>git log</code></strong>查看提交的历史</li>
-<li>关闭窗口后回来查看版本，可以用<strong><code>git reflog</code></strong>来查看要回退到哪个版本</li>
-</ol>
-<blockquote>
-<p> Git版本库里添加的时候，是分两步执行的：</p>
-<blockquote>
-<ul>
-<li>用git add把文件添加进去，实际上就是把文件修改添加到<strong>暂存区</strong>(index或者叫stage)；<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/4366692.jpg" alt="step1"></li>
-<li>git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支（Git自动为我们创建了唯一一个<strong>master分支</strong>）;<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/78409519.jpg" alt="step2"></li>
-</ul>
-</blockquote>
-</blockquote>
-<ul>
-<li><p>查看工作区的”file name” 和版本库里面的最新版本（HEAD）的区别。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git diff HEAD -- &quot;file name&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>（Remove）在<strong>本地工作</strong>空间删除一个文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rm &quot;filename&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>在<strong>版本库</strong>中删除文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git rm &quot;filename&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>误删</strong>了本地文件后，从版本库中恢复这个文件时用此命令，只能恢复版本库中最新（也就是最近一次commit的那个文件）的这个文件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout -- &quot;filename&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>本地关联远程仓库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin git@github.com:(__your-github-name__)/learngit.git(__github-stage__)</div></pre></td></tr></table></figure>
-</li>
-<li><p>远程库的名字就是<strong>origin</strong>，这是Git默认的叫法</p>
-</li>
-<li>把本地库的所有内容推送到远程库上 (<strong>-u</strong> 参数是第一次推送时用)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>提示出錯信息：fatal: remote origin already exists.<br>    解決辦法如下：<br>    1、先輸入$ git remote rm origin<br>    2、再輸入$ git remote add   </p>
-<ul>
-<li><p>克隆远程仓库.（SSH Key需要添加到GitHub)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone git@github.com:**yourname**/**your-repository-name**.git</div></pre></td></tr></table></figure>
-<p>克隆一个仓库，需要知道他的地址，用上诉口令克隆.  Git支持多种协议，包括https，但是ssh速度最快。   </p>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li>创建并切换到分支name （加上<strong>-b</strong>参数表示创建并切换）  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout -b **name** <span class="comment">#创建并切换分支name</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>相当于以下两条命令：<br>git branch <strong>dev</strong>   创建分支  dev<br>git  checkout <strong>dev</strong> 切换分支dev  </p>
-<ul>
-<li>命令查看当前分支。（此命令会列出所有分支，当前分支会有<code>*</code>标记）<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li>指定分支到当前分支<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git mege</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>git merge –no-ff -m “merge with no-ff” dev强制禁用Fast forward模式  </p>
-<ul>
-<li>删除name分支<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch -d **name**</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li><p><strong>强制</strong>删除name分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch -D **name**</div></pre></td></tr></table></figure>
-</li>
-<li><p>查看文件内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vi **Filename**</div></pre></td></tr></table></figure>
-</li>
-<li><p>查看分支的合并情况</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$  git log --graph --pretty=oneline --abbrev-commit</div></pre></td></tr></table></figure>
-</li>
-<li><p>储存现场</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git stash</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。</p>
-<ul>
-<li>查看当前stash缓存。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git stash list</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong> git stash apply和git stash pop的区别</strong></p>
-<blockquote>
-<p>git stash apply 恢复后stash内容不删除需要用git stash drop 来删除。查看<br>git stash pop 恢复后并删除。</p>
-</blockquote>
-</blockquote>
-<p> 当存在多个stash时，可以用 git stash apply stash@{0}来恢复指定的stash。</p>
-<h4 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h4><hr>
-<ul>
-<li><p>查看远程仓库的信息。（默认名字叫origin）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote</div></pre></td></tr></table></figure>
-</li>
-<li><p>查看远程仓库更加详细的信息。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote -v</div></pre></td></tr></table></figure>
-</li>
-<li><p>推送分支到仓库。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push &quot;origin&quot; &quot;你的分支名字&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>其他人克隆远程仓库到本地后，只有一个maste分支，当他需要从dev分支进行修改，需要用此命令将在远程仓库的dev分支获取到本地</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$　git checkout -b dev origin/dev</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>git pull  你跟你的小伙伴同时修改了dev分支，并且同时push，这时会发生冲突，需要先用此命令将最新的提交取到本地，在本地合并，解决冲突，再push。</p>
-<ul>
-<li>提示<code>no tracking information</code>：当git pull失败时，因为本地分支和远程分支没有连接，此命令来设置链接。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch --set-upstream dev origin/dev</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li>再pull：合并冲突，再pull</li>
-<li>最后git push origin dev 成功！<h5 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h5></li>
-</ul>
-<hr>
+<p>&emsp;&emsp;Hexo默认使用的评论插件是Disqus,但是我还是支持国产，毕竟网速什么的肯定比国外的网站快啦~下面是我总计的一些步骤。本人用的是<a href="http://litten.github.io/" title="litten" target="_blank" rel="external">Yilia</a>主题。</p>
 <ol>
-<li><p>查看远程库信息，使用git remote -v；</p>
+<li>首先我们要注册一个<a href="http://duoshuo.com/" title="多说官网" target="_blank" rel="external">多说账号</a>~<br><a href="http://duoshuo.com/" target="_blank" rel="external">http://duoshuo.com/</a> 官网地址<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/7116362.jpg" alt="多说注册界面"></li>
+<li><p>找到我们hexo的一级目录下面的<code>_config.yml</code>配置文件，用记事本类工具打开找到<code>duoshuo</code>,改成以下代码（后面的关键字是你的<strong>多说域名的名字部分，比如<a href="http://abc.duoshuo.com" target="_blank" rel="external">http://abc.duoshuo.com</a> 那么代码里面的frankroc部分要写abc</strong>）：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">duoshuo: frankroc</div></pre></td></tr></table></figure>
 </li>
-<li><p>本地新建的分支如果不推送到远程，对其他人就是不可见的；</p>
+<li><p>路径<code>themes\yilia\layout\_partial\article.ejs</code> 打开ejs文件：<br>找到(我的在最后面一段)  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.disqus_shortname)&#123; %&gt;</div><div class="line">&lt;section id=&quot;comments&quot;&gt;</div><div class="line">  &lt;div id=&quot;disqus_thread&quot;&gt;</div><div class="line">    &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;//disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
+<p>全部替换成下面的代码：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</div><div class="line">&lt;section id=&quot;comments&quot;&gt;</div><div class="line">&lt;!-- 多说评论框 start --&gt;</div><div class="line">&lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;&quot; data-title=&quot;&lt;%= post.title %&gt;&quot; data-url=&quot;&lt;%= page.permalink %&gt;&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;!-- 多说评论框 end --&gt;</div><div class="line">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">var duoshuoQuery = &#123;short_name:&apos;&lt;%= config.duoshuo_shortname %&gt;&apos;&#125;;</div><div class="line">  (function() &#123;</div><div class="line">    var ds = document.createElement(&apos;script&apos;);</div><div class="line">    ds.type = &apos;text/javascript&apos;;ds.async = true;</div><div class="line">    ds.src = (document.location.protocol == &apos;https:&apos; ? &apos;https:&apos; : &apos;http:&apos;) + &apos;//static.duoshuo.com/embed.js&apos;;</div><div class="line">    ds.charset = &apos;UTF-8&apos;;</div><div class="line">    (document.getElementsByTagName(&apos;head&apos;)[0] </div><div class="line">     || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(ds);</div><div class="line">  &#125;)();</div><div class="line">  &lt;/script&gt;</div><div class="line">&lt;!-- 多说公共JS代码 end --&gt;</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
 </li>
-<li><p>从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；</p>
-</li>
-<li><p>在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；</p>
-</li>
-<li><p>建立本地分支和远程分支的关联，使用git branch –set-upstream branch-name origin/branch-name；</p>
-</li>
-<li><p>从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。</p>
-<h5 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h5></li>
 </ol>
-<hr>
-<ul>
-<li><p>创建name 标签（在最新的commit上的）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git tag &quot;name&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>创建标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git tag -a  **name**  -m &quot;描述&quot; id</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>-a 指定标签名<br>-m  指定说明文字<br>-s 用私钥签名一个标签（采用gpg密钥需要GunPG）</p>
-<ul>
-<li><p>查看所有标签的列表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git tag</div></pre></td></tr></table></figure>
-</li>
-<li><p>给某一个id打标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git tag &lt;name&gt;  id</div></pre></td></tr></table></figure>
-</li>
-<li><p>查看具体tag的操作内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git show &lt;tagname&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>本地删除标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$  git tag -d &lt;tagname&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>推送标签到远程仓库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push origin &quot;tagname&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>一次性推送尚未被推送的所有标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push origin --tag</div></pre></td></tr></table></figure>
-</li>
-<li><p>删除远程仓库的tagname</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push origin :refs/tags/tagname</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="自定义GIT"><a href="#自定义GIT" class="headerlink" title="自定义GIT"></a>自定义GIT</h3><hr>
-<ul>
-<li><p>定义界面颜色</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config --global color.ui true</div></pre></td></tr></table></figure>
-</li>
-<li><p>特殊文件上传</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git add -f filename</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>-f带表强制添加</p>
-<h3 id="配置别名"><a href="#配置别名" class="headerlink" title="配置别名"></a>配置别名</h3><hr>
-<ul>
-<li><p>以后st就表示status</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config --global alias.st status</div></pre></td></tr></table></figure>
-</li>
-<li><p>撤销add缓存区的操作(unstage)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset &quot;filename&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>此命令为git log的加强版简化  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config --global alias.lg <span class="string">"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<p>&emsp;&emsp;以上命令是学习<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="GIT学习" target="_blank" rel="external">廖雪峰老师</a>的网站学哒，我学习时候记得一点学习的笔记，老师的网站可能更详细一些，我的这个更有利于查阅，方便大家。</p>
+<blockquote>
+<p>博客效果如图：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/59484331.jpg" alt="博客评论区"><br>多说后台图：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/4934609.jpg" alt="多说后台图"></p>
+</blockquote>
+<p>&emsp;&emsp;开始可能一脸懵逼，但是只要你跟着做，一定ok。遇到问题的话可以浏览或者加我微博,QQ帮你解决一下。</p>
 
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/10/03/Git的一些基本指令/" class="archive-article-date">
+      <a href="/2016/10/03/HEXO个人博客添加DuoShuo多说模块/" class="archive-article-date">
   	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多说/">多说</a></li></ul>
 	</div>
 
       
@@ -623,7 +417,7 @@
 
 
   
-    <article id="post-HEXO个人博客添加DuoShuo多说模块" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Git的一些基本指令" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -633,7 +427,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/03/HEXO个人博客添加DuoShuo多说模块/">HEXO个人博客添加DuoShuo多说模块</a>
+      <a class="article-title" href="/2016/10/03/Git的一些基本指令/">git的一些基本指令</a>
     </h1>
   
 
@@ -641,105 +435,66 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>参考连接 <a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9</a><br>官方文档 <a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9</a></p>
+        <ul>
+<li><p>查看当前文件内容列表（本地仓库各个文件名字以及格式）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls (file_name)</div></pre></td></tr></table></figure>
+</li>
+<li><p>随时掌握工作区</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git status</div></pre></td></tr></table></figure>
+</li>
+<li><p>查询改文件改变情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git diff</div></pre></td></tr></table></figure>
+</li>
+<li><p>git log  显示从最近到最远的提交日志</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git log</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p> git log –pretty=oneline 信息比较简单输出  </p>
+<ul>
+<li>由过去穿越到未来的版本，查看所有日志<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reflog</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>git reflog 记录你的每一次命令，也可以通过此方法找Commit id(非常不错的方法)。</p>
+<ul>
+<li>回退版本到<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard HEAD^</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>用<code>HEAD</code>表示当前版本，也就是最新的提交3628164…882e1e0（注意我的提交ID和你的肯定不一样），上一个版本就是<code>HEAD^</code>，上上一个版本就是<code>HEAD^^</code>，当然往上100个版本写100个^比较容易数不过来，所以写成<strong>HEAD~100</strong>。</p>
+<ul>
+<li>获取文件内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cat &quot;filename&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
 </blockquote>
-<p>&emsp;&emsp;Hexo默认使用的评论插件是Disqus,但是我还是支持国产，毕竟网速什么的肯定比国外的网站快啦~下面是我总计的一些步骤。本人用的是<a href="http://litten.github.io/" title="litten" target="_blank" rel="external">Yilia</a>主题。</p>
-<ol>
-<li>首先我们要注册一个<a href="http://duoshuo.com/" title="多说官网" target="_blank" rel="external">多说账号</a>~<br><a href="http://duoshuo.com/" target="_blank" rel="external">http://duoshuo.com/</a> 官网地址<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/7116362.jpg" alt="多说注册界面"></li>
-<li><p>找到我们hexo的一级目录下面的<code>_config.yml</code>配置文件，用记事本类工具打开找到<code>duoshuo</code>,改成以下代码（后面的关键字是你的<strong>多说域名的名字部分，比如<a href="http://abc.duoshuo.com" target="_blank" rel="external">http://abc.duoshuo.com</a> 那么代码里面的frankroc部分要写abc</strong>）：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">duoshuo: frankroc</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>版本号（commit id）</strong>“首先要知道回退的版本号，其次版本号不一定要写全，但是也不能太少否则Git会匹配多个版本号造成混乱。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard</div></pre></td></tr></table></figure>
 </li>
-<li><p>路径<code>themes\yilia\layout\_partial\article.ejs</code> 打开ejs文件：<br>找到(我的在最后面一段)  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.disqus_shortname)&#123; %&gt;</div><div class="line">&lt;section id=&quot;comments&quot;&gt;</div><div class="line">  &lt;div id=&quot;disqus_thread&quot;&gt;</div><div class="line">    &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;//disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
-<p>全部替换成下面的代码：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</div><div class="line">&lt;section id=&quot;comments&quot;&gt;</div><div class="line">&lt;!-- 多说评论框 start --&gt;</div><div class="line">&lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;&quot; data-title=&quot;&lt;%= post.title %&gt;&quot; data-url=&quot;&lt;%= page.permalink %&gt;&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;!-- 多说评论框 end --&gt;</div><div class="line">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">var duoshuoQuery = &#123;short_name:&apos;&lt;%= config.duoshuo_shortname %&gt;&apos;&#125;;</div><div class="line">  (function() &#123;</div><div class="line">    var ds = document.createElement(&apos;script&apos;);</div><div class="line">    ds.type = &apos;text/javascript&apos;;ds.async = true;</div><div class="line">    ds.src = (document.location.protocol == &apos;https:&apos; ? &apos;https:&apos; : &apos;http:&apos;) + &apos;//static.duoshuo.com/embed.js&apos;;</div><div class="line">    ds.charset = &apos;UTF-8&apos;;</div><div class="line">    (document.getElementsByTagName(&apos;head&apos;)[0] </div><div class="line">     || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(ds);</div><div class="line">  &#125;)();</div><div class="line">  &lt;/script&gt;</div><div class="line">&lt;!-- 多说公共JS代码 end --&gt;</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
-</li>
+</ul>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><strong><code>HEAD</code></strong> 指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<strong><code>Git reset --hard commit_id</code></strong>.</li>
+<li>在回退之前，可以用<strong><code>git log</code></strong>查看提交的历史</li>
+<li>关闭窗口后回来查看版本，可以用<strong><code>git reflog</code></strong>来查看要回退到哪个版本</li>
 </ol>
 <blockquote>
-<p>博客效果如图：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/59484331.jpg" alt="博客评论区"><br>多说后台图：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/4934609.jpg" alt="多说后台图"></p>
-</blockquote>
-<p>&emsp;&emsp;开始可能一脸懵逼，但是只要你跟着做，一定ok。遇到问题的话可以浏览或者加我微博,QQ帮你解决一下。</p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/03/HEXO个人博客添加DuoShuo多说模块/" class="archive-article-date">
-  	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多说/">多说</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo更换yilia主题之后遇到的一些问题以及解决方案" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/">hexo更换Yilia主题之后遇到的一些问题以及解决方案（不定期更新）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>附上作者的github的参考链接<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia</a></p>
-</blockquote>
-<p>&emsp;&emsp;我觉得不是很详细，很多配置都得自己研究，或许作业为了培养我们的自学研究能力吧~哈哈！在研究代码过程中也遇到了很多奇奇怪怪零零散散的小问题，同样做一个问题解决记录，方便自己和他人以后再遇到此问题能够及时的解决，节约大家的时间！</p>
-<ul>
-<li><strong>问题1</strong>微博超链接到自己的主页？那么自己的主页地址是什么的？<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/79959974.jpg" alt="微博链接"><br>解决方法：<br>1.打开新浪微博后如下图，在右侧找到自己的昵称，点击它。<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/7544631.jpg" alt="1.1图片微博"><br>2.打开个人主页面，如下图，在顶部地址栏中可以看到有几段地址，把后面的东西删除掉剩下包括一堆数字以及前面的部分。然后回车<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/10589765.jpg" alt="1.2链接删除"><br>3.回车之后加载出的地址便是我们需要的地址了~如下图<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/48371272.jpg" alt="1.3正确分享地址"></li>
-<li><strong>问题2.</strong>github的链接在哪里？<br>解决方法：<br>1.首先你得有github账户对吧？至于怎么申请？来有教程<br><a href="http://jingyan.baidu.com/article/455a9950abe0ada167277864.html" target="_blank" rel="external">http://jingyan.baidu.com/article/455a9950abe0ada167277864.html</a> &lt;-百度教程链接<br>2.你注册好之后呢点击你的头像然后点击你的仓库(your profile)，上面的链接就是你的github链接了~<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/95961972.jpg" alt="github"></li>
-<li><strong>问题3.</strong>知乎的超链接怎么找？如图（刚入的知乎嘿嘿）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/28645477.jpg" alt="知乎"></li>
-<li><p><strong>问题4.</strong>QQ邮箱地址的超链接怎么搞？<br>解决方案：<br>1.登陆邮箱后，点击<strong>设置</strong><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/68289722.jpg" alt="QQ邮箱1"><br>2.点击<strong>账户</strong>，拉到最下面看到<strong>使用邮我</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/27306096.jpg" alt="QQ邮箱2"><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/5560407.jpg" alt="QQ邮箱3"><br>3.点击<strong>我要体验</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/43502974.jpg" alt="QQ邮箱-我要体验"><br>4.上面随便选一个，点击下面的<strong>获取代码</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/97835455.jpg" alt="获取代码"><br>5.我选中的部分就是咱们需要的邮箱地址了。（注意在引号之间）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/35231061.jpg" alt="邮箱链接"></p>
+<p> Git版本库里添加的时候，是分两步执行的：</p>
 <blockquote>
-<p>看一下此链接的效果吧~dāng dāng dàng dǎng~<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/5127846.jpg" alt="QQ邮箱效果"></p>
-</blockquote>
-</li>
-<li><p><strong>问题5.</strong>我先添加一篇写好的MD文章怎么办？<br><strong>我的解决方案：</strong>把写好的md文件拖到我们的博客的文件目录<code>source\_posts</code>下面就好了。</p>
-</li>
-<li><strong>问题6.</strong>文章还有标签？这个好玩怎么添加呢？<br>md文档的统一格式如下：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line"></div><div class="line">title: &lt;你的文章标题&gt;</div><div class="line">date: 2016-10-03 20:10:33  #日期精确到秒</div><div class="line">tags: [标签名1,标签名2，标签名3]  #添加多个标签名</div><div class="line">tag:</div><div class="line">	-  标签名1</div><div class="line">	-  标签名2</div><div class="line">	-  标签名3            #标签的另一种格式 </div><div class="line">---</div></pre></td></tr></table></figure></li>
-</ul>
-
+<ul>
+<li>用git add把文件添加进去，实际上就是把文件修改添加到<strong>暂存区</strong>(index或者叫stage)；<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/4366692.jpg" alt="step1"></li>
+<li>git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支（Git自动为我们创建了唯一一个<strong>master分支</strong>）;<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/78409519.jpg" alt="step2">
+        <p class="article-more-link">
+          <a  href="/2016/10/03/Git的一些基本指令/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/" class="archive-article-date">
+      <a href="/2016/10/03/Git的一些基本指令/" class="archive-article-date">
   	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yilia/">Yilia</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
 	</div>
 
       
@@ -861,6 +616,74 @@
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yilia/">Yilia</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/换主题/">换主题</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-hexo更换yilia主题之后遇到的一些问题以及解决方案" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/">hexo更换Yilia主题之后遇到的一些问题以及解决方案（不定期更新）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>附上作者的github的参考链接<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia</a></p>
+</blockquote>
+<p>&emsp;&emsp;我觉得不是很详细，很多配置都得自己研究，或许作业为了培养我们的自学研究能力吧~哈哈！在研究代码过程中也遇到了很多奇奇怪怪零零散散的小问题，同样做一个问题解决记录，方便自己和他人以后再遇到此问题能够及时的解决，节约大家的时间！</p>
+<ul>
+<li><strong>问题1</strong>微博超链接到自己的主页？那么自己的主页地址是什么的？<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/79959974.jpg" alt="微博链接"><br>解决方法：<br>1.打开新浪微博后如下图，在右侧找到自己的昵称，点击它。<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/7544631.jpg" alt="1.1图片微博"><br>2.打开个人主页面，如下图，在顶部地址栏中可以看到有几段地址，把后面的东西删除掉剩下包括一堆数字以及前面的部分。然后回车<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/10589765.jpg" alt="1.2链接删除"><br>3.回车之后加载出的地址便是我们需要的地址了~如下图<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/48371272.jpg" alt="1.3正确分享地址"></li>
+<li><strong>问题2.</strong>github的链接在哪里？<br>解决方法：<br>1.首先你得有github账户对吧？至于怎么申请？来有教程<br><a href="http://jingyan.baidu.com/article/455a9950abe0ada167277864.html" target="_blank" rel="external">http://jingyan.baidu.com/article/455a9950abe0ada167277864.html</a> &lt;-百度教程链接<br>2.你注册好之后呢点击你的头像然后点击你的仓库(your profile)，上面的链接就是你的github链接了~<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/95961972.jpg" alt="github"></li>
+<li><strong>问题3.</strong>知乎的超链接怎么找？如图（刚入的知乎嘿嘿）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/28645477.jpg" alt="知乎"></li>
+<li><p><strong>问题4.</strong>QQ邮箱地址的超链接怎么搞？<br>解决方案：<br>1.登陆邮箱后，点击<strong>设置</strong><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/68289722.jpg" alt="QQ邮箱1"><br>2.点击<strong>账户</strong>，拉到最下面看到<strong>使用邮我</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/27306096.jpg" alt="QQ邮箱2"><br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/5560407.jpg" alt="QQ邮箱3"><br>3.点击<strong>我要体验</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/43502974.jpg" alt="QQ邮箱-我要体验"><br>4.上面随便选一个，点击下面的<strong>获取代码</strong>按钮<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/97835455.jpg" alt="获取代码"><br>5.我选中的部分就是咱们需要的邮箱地址了。（注意在引号之间）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/35231061.jpg" alt="邮箱链接"></p>
+<blockquote>
+<p>看一下此链接的效果吧~dāng dāng dàng dǎng~<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/5127846.jpg" alt="QQ邮箱效果"></p>
+</blockquote>
+</li>
+<li><p><strong>问题5.</strong>我先添加一篇写好的MD文章怎么办？<br><strong>我的解决方案：</strong>把写好的md文件拖到我们的博客的文件目录<code>source\_posts</code>下面就好了。</p>
+</li>
+<li><strong>问题6.</strong>文章还有标签？这个好玩怎么添加呢？<br>md文档的统一格式如下：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line"></div><div class="line">title: &lt;你的文章标题&gt;</div><div class="line">date: 2016-10-03 20:10:33  #日期精确到秒</div><div class="line">tags: [标签名1,标签名2，标签名3]  #添加多个标签名</div><div class="line">tag:</div><div class="line">	-  标签名1</div><div class="line">	-  标签名2</div><div class="line">	-  标签名3            #标签的另一种格式 </div><div class="line">---</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/" class="archive-article-date">
+  	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yilia/">Yilia</a></li></ul>
 	</div>
 
       
