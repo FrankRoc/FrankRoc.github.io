@@ -140,198 +140,6 @@
       <div class="body-wrap">
         
   
-    <article id="post-less" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/05/less/">less常用语法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<ol>
-<li><p>less 文件开头需要写：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@charset &quot;utf-8&quot;</div><div class="line">```  </div><div class="line">2. less的注释有所不同:</div><div class="line">``` </div><div class="line">/*我会被编译*/ #此方法所包含的注释会被编译  </div><div class="line">/我不会被编译/ #此方法注释则不会被编译</div><div class="line">``` </div><div class="line">3. less变量声明：  </div><div class="line">```  </div><div class="line">@test:300px;/*@变量名:变量值;*/</div></pre></td></tr></table></figure>
-</li>
-<li><p>less 混合  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.box1&#123;</div><div class="line">	.box2;</div><div class="line">	attr:attr;</div><div class="line">&#125;</div><div class="line">```  </div><div class="line">定义一个带参数的类：</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>.border_2(@border_width){<br>    border:solid #000 @border_width;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">调用这个带参数类：</div></pre></td></tr></table></figure></p>
-<p>.box1{<br>    .border_2(20px);//边框宽度为20px(==border:solid #000 20px)<br>    width:100px;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">混合可以带默认参数值：</div></pre></td></tr></table></figure></p>
-<p>.border_3(@border_width:30px){//此参数默认30px<br>    border:solid #000 @border_width;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&gt; 调用时无参数代表默认，有参数则参数代替原默认值  </div><div class="line">5. 匹配模式</div><div class="line">&amp;emsp;&amp;emsp;下面分别有上(top)下(bottom)左(left)右(right)4个参数，你可以匹配这四个参数，但如果你匹配了一个没有的参数，比如&apos;中(mid)&apos;，不会报错，只是没有样式而已，但是默认样式还是有会有。</div><div class="line">```javascript</div><div class="line">.trangle(top,@w:5px,@c:#ccc)&#123;//上箭头类</div><div class="line">    border-width: @w;</div><div class="line">    border-color:transparent transparent @c transparent;</div><div class="line">    border-style: dashed dashed solid dashed; </div><div class="line">&#125;</div><div class="line">.trangle(bottom,@w:5px,@c:#ccc)&#123;//下箭头类</div><div class="line">    border-width: @w;</div><div class="line">    border-color:@c transparent transparent transparent;</div><div class="line">    border-style: solid dashed dashed dashed; </div><div class="line">&#125;</div><div class="line">.trangle(left,@w:5px,@c:#ccc)&#123;//左箭头类</div><div class="line">    border-width: @w;</div><div class="line">    border-color: transparent @c transparent transparent;</div><div class="line">    border-style:  dashed solid dashed dashed; </div><div class="line">&#125;</div><div class="line">.trangle(right,@w:5px,@c:#ccc)&#123;//右箭头类</div><div class="line">    border-width: @w;</div><div class="line">    border-color: transparent transparent transparent @c;</div><div class="line">    border-style:  dashed dashed dashed solid; </div><div class="line">&#125;</div><div class="line">.trangle(@_,@w:5px,@c:#ccc)&#123;//上面4个方向默认带样式（不管是否匹配都会有）</div><div class="line">    width:0;</div><div class="line">    height: 0;</div><div class="line">    overflow: hidden;</div><div class="line">&#125;</div><div class="line">//下面就是调用这几个方法了:</div><div class="line">.arrow&#123;</div><div class="line">    width: 0;</div><div class="line">    .trangle(bottom,100px)//下箭头，宽度是100px</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>再来一个简单的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.p(r)&#123;<span class="comment">//相对</span></div><div class="line">    position: relative;</div><div class="line">&#125;</div><div class="line">.p(a)&#123;<span class="comment">//绝对</span></div><div class="line">    position: absolute;</div><div class="line">&#125;</div><div class="line">.p(f)&#123;<span class="comment">//固定</span></div><div class="line">    position: fixed;</div><div class="line">&#125;</div><div class="line"><span class="comment">//调用上面的的类:</span></div><div class="line">.arrow&#123;</div><div class="line">    .p(f);<span class="comment">//固定定位</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<ol>
-<li><p>运算</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@width_1:300px;//定义一个变量width_1</div><div class="line">.box2&#123;</div><div class="line">    width: (@width_1 + 50)*2;//宽度可以运算=700px</div><div class="line">    color: #ccc-100;//颜色也可以运算</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>嵌套（<strong>重要</strong>）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//html代码:</div><div class="line">&lt;ul class=&quot;list&quot;&gt;</div><div class="line">	&lt;li&gt;&lt;a href=&quot;&quot;&gt;这是&lt;/a&gt;&lt;span&gt;测试文字&lt;/span&gt;&lt;/li&gt;</div><div class="line">	&lt;li&gt;&lt;a href=&quot;&quot;&gt;这是&lt;/a&gt;&lt;span&gt;测试文字&lt;/span&gt;&lt;/li&gt;</div><div class="line">	&lt;li&gt;&lt;a href=&quot;&quot;&gt;这是&lt;/a&gt;&lt;span&gt;测试文字&lt;/span&gt;&lt;/li&gt;</div><div class="line">	&lt;li&gt;&lt;a href=&quot;&quot;&gt;这是&lt;/a&gt;&lt;span&gt;测试文字&lt;/span&gt;&lt;/li&gt;</div><div class="line">	&lt;li&gt;&lt;a href=&quot;&quot;&gt;这是&lt;/a&gt;&lt;span&gt;测试文字&lt;/span&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">//less代码:</div><div class="line">.list&#123;</div><div class="line">    width: 600px;</div><div class="line">    margin: 30px auto;</div><div class="line">    padding: 0;</div><div class="line">    list-style: none;</div><div class="line">    li&#123;</div><div class="line">        height: 30px;</div><div class="line">        line-height: 30px;</div><div class="line">        background-color: green;</div><div class="line">        margin-bottom: 10px;</div><div class="line">        padding: 0 20px;</div><div class="line">    &#125;</div><div class="line">    a&#123;</div><div class="line">        float: left;</div><div class="line">		&amp;:hover&#123;//&amp;代表父级&lt;.list a&gt;：hover添加效果</div><div class="line">            color: red;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    span&#123;</div><div class="line">        float: right;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//编译成css代码为：</div><div class="line">.list li &#123;</div><div class="line">  height: 30px;</div><div class="line">  line-height: 30px;</div><div class="line">  background-color: green;</div><div class="line">  margin-bottom: 10px;</div><div class="line">  padding: 0 20px;</div><div class="line">&#125;</div><div class="line">.list a &#123;</div><div class="line">  float: left;</div><div class="line">&#125;</div><div class="line">.list a:hover &#123;</div><div class="line">  color: red;</div><div class="line">&#125;</div><div class="line">.list span &#123;</div><div class="line">  float: right;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>效果如下图所示：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-5/74070098.jpg" alt="嵌套图"></p>
-<ol>
-<li>@arguments 变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//less代码:</div><div class="line">.arguments(@w:30px,@h:60px,@c:red,@xx:solid)&#123;</div><div class="line">   border: @arguments;//代表把所有的参数都写进来</div><div class="line">&#125;</div><div class="line">.test_arguments&#123;</div><div class="line">    .arguments();</div><div class="line">	//.arguments(50px)仍然可以传递参数，参数按定义顺序匹配</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//编译成css代码:</div><div class="line">.test_arguments &#123;</div><div class="line">  border: 30px 60px #ff0000 solid;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li>避免编译<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//less代码：</div><div class="line">.test_3&#123;</div><div class="line">    //width: calc(300px-30px);//我们需要浏览器算，而不是less</div><div class="line">    width: ~&apos;calc(300px-30px)&apos;;/*less不会算出结果*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//css编译结果：</div><div class="line">.test_3 &#123;</div><div class="line">  width: calc(300px-30px);</div><div class="line">  /*less不会算出结果*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li>！important<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//less代码:</div><div class="line">.border_2(@border_width)&#123;</div><div class="line">    border:solid #000 @border_width;</div><div class="line">&#125;</div><div class="line">.test_important&#123;</div><div class="line">    .border_2(30px)!important;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//css编译结果:</div><div class="line">.test_important &#123;</div><div class="line">  border: solid #000000 30px !important;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h4 id="1-编译工具"><a href="#1-编译工具" class="headerlink" title="1.编译工具"></a>1.编译工具</h4><ul>
-<li>koala编译<ul>
-<li>Koala</li>
-<li>国人开发的LESS/SASS编译工具</li>
-<li>下载地址：<a href="http://koala-app.com/index-zh.html" target="_blank" rel="external">http://koala-app.com/index-zh.html</a></li>
-</ul>
-</li>
-<li>Node.js库</li>
-<li>浏览器端使用</li>
-</ul>
-<h4 id="2-Less的注释"><a href="#2-Less的注释" class="headerlink" title="2.Less的注释"></a>2.Less的注释</h4><ul>
-<li>LESS中的注释<ul>
-<li>可以书用css中的注释（/**/）</li>
-<li>也可以使用//注释<ul>
-<li>//编译时会自动过滤</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="3-变量"><a href="#3-变量" class="headerlink" title="3.变量"></a>3.变量</h4><ul>
-<li>LESS中的变量<ul>
-<li>@开头</li>
-<li><code>@test_width:300px</code></li>
-</ul>
-</li>
-</ul>
-<h4 id="4-混合"><a href="#4-混合" class="headerlink" title="4.混合"></a>4.混合</h4><ul>
-<li>混合变量<ul>
-<li>例如：.border{border:solid 10px red;}</li>
-</ul>
-</li>
-<li>带参数的混合<ul>
-<li>.border-radius(@radius){css代码}<ul>
-<li>可以设定默认值</li>
-<li>border-radius(@radius:5px){css代码}</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="5-匹配模式"><a href="#5-匹配模式" class="headerlink" title="5.匹配模式"></a>5.匹配模式</h4><ul>
-<li>匹配模式<ul>
-<li>相当于js中的if判断语句<ul>
-<li>但不全是</li>
-</ul>
-</li>
-<li>满足条件后才能匹配<ul>
-<li>可以有默认样式</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="6-运算"><a href="#6-运算" class="headerlink" title="6.运算"></a>6.运算</h4><ul>
-<li>less中的运算<ul>
-<li>任何数字、颜色或者变量都可以参与运算，运算应该被包裹在括号中。<ul>
-<li>例如：+ - * /</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="7-嵌套规则"><a href="#7-嵌套规则" class="headerlink" title="7.嵌套规则"></a>7.嵌套规则</h4><ul>
-<li>less中嵌套<ul>
-<li>比较常用</li>
-<li>两种方法<ul>
-<li>&amp; 对味蕾使用<ul>
-<li>hover 或 focus</li>
-</ul>
-</li>
-<li>对连接的使用<ul>
-<li>&amp;-item</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="8-arguments变量"><a href="#8-arguments变量" class="headerlink" title="8.@arguments变量"></a>8.@arguments变量</h4><ul>
-<li>@arguments包含了所有传递进来的参数</li>
-<li>如果你不想单独处理每一个参数的话可以这么用</li>
-</ul>
-<h4 id="9-避免编译"><a href="#9-避免编译" class="headerlink" title="9.避免编译"></a>9.避免编译</h4><ul>
-<li>又是我们需要输出一些不正确的CSS语法或者使用一些LESS不认识的专有语法。</li>
-<li>要输出这样的值我们要在字符串前加一个一个 ~<ul>
-<li>例如： width:~’calc(300px-30)’</li>
-</ul>
-</li>
-</ul>
-<h4 id="10-important"><a href="#10-important" class="headerlink" title="10.!important"></a>10.!important</h4><ul>
-<li>!important关键字<ul>
-<li>会为所有混合所带来的样式添上！important</li>
-</ul>
-</li>
-</ul>
-<p>以上是我在慕课课网学习<a href="http://www.imooc.com/course/list?c=sassless" title="less" target="_blank" rel="external">less即学即用</a>课程整理的笔记。</p>
-<blockquote>
-<p>less官方文档：<a href="http://lesscss.cn/" target="_blank" rel="external">http://lesscss.cn/</a></p>
-</blockquote>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/05/less/" class="archive-article-date">
-  	<time datetime="2016-10-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-05</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/less/">less</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
-  
     <article id="post-xsheel连不上远程centos系统" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -454,6 +262,105 @@
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-github/">hexo github</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Git的一些基本指令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/03/Git的一些基本指令/">git的一些基本指令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>查看当前文件内容列表（本地仓库各个文件名字以及格式）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls (file_name)</div></pre></td></tr></table></figure>
+</li>
+<li><p>随时掌握工作区</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git status</div></pre></td></tr></table></figure>
+</li>
+<li><p>查询改文件改变情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git diff</div></pre></td></tr></table></figure>
+</li>
+<li><p>git log  显示从最近到最远的提交日志</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git log</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p> git log –pretty=oneline 信息比较简单输出  </p>
+<ul>
+<li>由过去穿越到未来的版本，查看所有日志<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reflog</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>git reflog 记录你的每一次命令，也可以通过此方法找Commit id(非常不错的方法)。</p>
+<ul>
+<li>回退版本到<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard HEAD^</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>用<code>HEAD</code>表示当前版本，也就是最新的提交3628164…882e1e0（注意我的提交ID和你的肯定不一样），上一个版本就是<code>HEAD^</code>，上上一个版本就是<code>HEAD^^</code>，当然往上100个版本写100个^比较容易数不过来，所以写成<strong>HEAD~100</strong>。</p>
+<ul>
+<li>获取文件内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cat &quot;filename&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>版本号（commit id）</strong>“首先要知道回退的版本号，其次版本号不一定要写全，但是也不能太少否则Git会匹配多个版本号造成混乱。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><strong><code>HEAD</code></strong> 指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<strong><code>Git reset --hard commit_id</code></strong>.</li>
+<li>在回退之前，可以用<strong><code>git log</code></strong>查看提交的历史</li>
+<li>关闭窗口后回来查看版本，可以用<strong><code>git reflog</code></strong>来查看要回退到哪个版本</li>
+</ol>
+<blockquote>
+<p> Git版本库里添加的时候，是分两步执行的：</p>
+<blockquote>
+<ul>
+<li>用git add把文件添加进去，实际上就是把文件修改添加到<strong>暂存区</strong>(index或者叫stage)；<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/4366692.jpg" alt="step1"></li>
+<li>git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支（Git自动为我们创建了唯一一个<strong>master分支</strong>）;<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/78409519.jpg" alt="step2">
+        <p class="article-more-link">
+          <a  href="/2016/10/03/Git的一些基本指令/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/03/Git的一些基本指令/" class="archive-article-date">
+  	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
 	</div>
 
       
@@ -654,7 +561,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/URI/" style="font-size: 10px;">URI</a> <a href="/tags/URl/" style="font-size: 10px;">URl</a> <a href="/tags/Xshell/" style="font-size: 10px;">Xshell</a> <a href="/tags/Yilia/" style="font-size: 20px;">Yilia</a> <a href="/tags/centOS/" style="font-size: 10px;">centOS</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo-github/" style="font-size: 10px;">hexo github</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/xhtml/" style="font-size: 10px;">xhtml</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/免流量/" style="font-size: 10px;">免流量</a> <a href="/tags/多说/" style="font-size: 10px;">多说</a> <a href="/tags/换主题/" style="font-size: 15px;">换主题</a>
+    				<a href="/tags/URI/" style="font-size: 10px;">URI</a> <a href="/tags/URl/" style="font-size: 10px;">URl</a> <a href="/tags/Xshell/" style="font-size: 10px;">Xshell</a> <a href="/tags/Yilia/" style="font-size: 20px;">Yilia</a> <a href="/tags/centOS/" style="font-size: 10px;">centOS</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo-github/" style="font-size: 10px;">hexo github</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/xhtml/" style="font-size: 10px;">xhtml</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/免流量/" style="font-size: 10px;">免流量</a> <a href="/tags/多说/" style="font-size: 10px;">多说</a> <a href="/tags/换主题/" style="font-size: 15px;">换主题</a>
     			</div>
     	</section>
     
