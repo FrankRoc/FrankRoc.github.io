@@ -33,7 +33,7 @@ less变量声明：
 less 混合  
 1234.box1&amp;#123;	.box2;	attr:attr;&amp;#125;">
 <meta property="og:image" content="http://odxqfn7qu.bkt.clouddn.com/16-10-5/74070098.jpg">
-<meta property="og:updated_time" content="2016-10-05T04:07:51.537Z">
+<meta property="og:updated_time" content="2016-11-09T12:13:48.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="less常用语法">
 <meta name="twitter:description" content="less 文件开头需要写：
@@ -209,7 +209,8 @@ less 混合
 <blockquote>
 <p>调用时无参数代表默认，有参数则参数代替原默认值  </p>
 <ol>
-<li>匹配模式<br>&emsp;&emsp;下面分别有上(top)下(bottom)左(left)右(right)4个参数，你可以匹配这四个参数，但如果你匹配了一个没有的参数，比如’中(mid)’，不会报错，只是没有样式而已，但是默认样式还是有会有。<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">.trangle(top,@w:5px,@c:#ccc)&#123;//上箭头类</div><div class="line">    border-width: @w;</div><div class="line">    border-color:transparent transparent @c transparent;</div><div class="line">    border-style: dashed dashed solid dashed; </div><div class="line">&#125;</div><div class="line">.trangle(bottom,@w:5px,@c:#ccc)&#123;//下箭头类</div><div class="line">    border-width: @w;</div><div class="line">    border-color:@c transparent transparent transparent;</div><div class="line">    border-style: solid dashed dashed dashed; </div><div class="line">&#125;</div><div class="line">.trangle(left,@w:5px,@c:#ccc)&#123;//左箭头类</div><div class="line">    border-width: @w;</div><div class="line">    border-color: transparent @c transparent transparent;</div><div class="line">    border-style:  dashed solid dashed dashed; </div><div class="line">&#125;</div><div class="line">.trangle(right,@w:5px,@c:#ccc)&#123;//右箭头类</div><div class="line">    border-width: @w;</div><div class="line">    border-color: transparent transparent transparent @c;</div><div class="line">    border-style:  dashed dashed dashed solid; </div><div class="line">&#125;</div><div class="line">.trangle(@_,@w:5px,@c:#ccc)&#123;//上面4个方向默认带样式（不管是否匹配都会有）</div><div class="line">    width:0;</div><div class="line">    height: 0;</div><div class="line">    overflow: hidden;</div><div class="line">&#125;</div><div class="line">//下面就是调用这几个方法了:</div><div class="line">.arrow&#123;</div><div class="line">    width: 0;</div><div class="line">    .trangle(bottom,100px)//下箭头，宽度是100px</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>匹配模式<br>&emsp;&emsp;下面分别有上(top)下(bottom)左(left)右(right)4个参数，你可以匹配这四个参数，但如果你匹配了一个没有的参数，比如’中(mid)’，不会报错，只是没有样式而已，但是默认样式还是有会有。<a id="more"></a>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">.trangle(top,@w:5px,@c:#ccc)&#123;//上箭头类</div><div class="line">    border-width: @w;</div><div class="line">    border-color:transparent transparent @c transparent;</div><div class="line">    border-style: dashed dashed solid dashed; </div><div class="line">&#125;</div><div class="line">.trangle(bottom,@w:5px,@c:#ccc)&#123;//下箭头类</div><div class="line">    border-width: @w;</div><div class="line">    border-color:@c transparent transparent transparent;</div><div class="line">    border-style: solid dashed dashed dashed; </div><div class="line">&#125;</div><div class="line">.trangle(left,@w:5px,@c:#ccc)&#123;//左箭头类</div><div class="line">    border-width: @w;</div><div class="line">    border-color: transparent @c transparent transparent;</div><div class="line">    border-style:  dashed solid dashed dashed; </div><div class="line">&#125;</div><div class="line">.trangle(right,@w:5px,@c:#ccc)&#123;//右箭头类</div><div class="line">    border-width: @w;</div><div class="line">    border-color: transparent transparent transparent @c;</div><div class="line">    border-style:  dashed dashed dashed solid; </div><div class="line">&#125;</div><div class="line">.trangle(@_,@w:5px,@c:#ccc)&#123;//上面4个方向默认带样式（不管是否匹配都会有）</div><div class="line">    width:0;</div><div class="line">    height: 0;</div><div class="line">    overflow: hidden;</div><div class="line">&#125;</div><div class="line">//下面就是调用这几个方法了:</div><div class="line">.arrow&#123;</div><div class="line">    width: 0;</div><div class="line">    .trangle(bottom,100px)//下箭头，宽度是100px</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 </blockquote>
@@ -366,6 +367,15 @@ less 混合
   
 <nav id="article-nav">
   
+    <a href="/2016/11/09/个人简历/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          个人简历
+        
+      </div>
+    </a>
+  
   
     <a href="/2016/10/04/xsheel连不上远程centos系统/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">关于Xshell和Putty连不上远程centOS的问题解决过程</div>
@@ -482,7 +492,7 @@ less 混合
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/URI/" style="font-size: 10px;">URI</a> <a href="/tags/URl/" style="font-size: 10px;">URl</a> <a href="/tags/Xshell/" style="font-size: 10px;">Xshell</a> <a href="/tags/Yilia/" style="font-size: 20px;">Yilia</a> <a href="/tags/centOS/" style="font-size: 10px;">centOS</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo-github/" style="font-size: 10px;">hexo github</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/xhtml/" style="font-size: 10px;">xhtml</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/免流量/" style="font-size: 10px;">免流量</a> <a href="/tags/多说/" style="font-size: 10px;">多说</a> <a href="/tags/换主题/" style="font-size: 15px;">换主题</a>
+    				<a href="/tags/URI/" style="font-size: 10px;">URI</a> <a href="/tags/URl/" style="font-size: 10px;">URl</a> <a href="/tags/Xshell/" style="font-size: 10px;">Xshell</a> <a href="/tags/Yilia/" style="font-size: 20px;">Yilia</a> <a href="/tags/centOS/" style="font-size: 10px;">centOS</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo-github/" style="font-size: 10px;">hexo github</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/xhtml/" style="font-size: 10px;">xhtml</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/免流量/" style="font-size: 10px;">免流量</a> <a href="/tags/多说/" style="font-size: 10px;">多说</a> <a href="/tags/换主题/" style="font-size: 15px;">换主题</a> <a href="/tags/简历/" style="font-size: 10px;">简历</a>
     			</div>
     	</section>
     
