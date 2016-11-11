@@ -140,7 +140,7 @@
       <div class="body-wrap">
         
   
-    <article id="post-Git的一些基本指令" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js_RegExp" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -150,7 +150,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/03/Git的一些基本指令/">git的一些基本指令</a>
+      <a class="article-title" href="/2016/10/03/js_RegExp/">JS中的正则表达式</a>
     </h1>
   
 
@@ -158,69 +158,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p>查看当前文件内容列表（本地仓库各个文件名字以及格式）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls (file_name)</div></pre></td></tr></table></figure>
-</li>
-<li><p>随时掌握工作区</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git status</div></pre></td></tr></table></figure>
-</li>
-<li><p>查询改文件改变情况</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git diff</div></pre></td></tr></table></figure>
-</li>
-<li><p>git log  显示从最近到最远的提交日志</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git log</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p> git log –pretty=oneline 信息比较简单输出  </p>
-<ul>
-<li>由过去穿越到未来的版本，查看所有日志<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reflog</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>git reflog 记录你的每一次命令，也可以通过此方法找Commit id(非常不错的方法)。</p>
-<ul>
-<li>回退版本到<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard HEAD^</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>用<code>HEAD</code>表示当前版本，也就是最新的提交3628164…882e1e0（注意我的提交ID和你的肯定不一样），上一个版本就是<code>HEAD^</code>，上上一个版本就是<code>HEAD^^</code>，当然往上100个版本写100个^比较容易数不过来，所以写成<strong>HEAD~100</strong>。</p>
-<ul>
-<li>获取文件内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cat &quot;filename&quot;</div></pre></td></tr></table></figure>
-</li>
-</ul>
+        <blockquote>
+<p>正则表达式(regular expression)是一个描述字符模式的对象。ECMAScript 的 RegExp 类表示正则表达式，而 String 和 RegExp 都定义了使用正则表达式进行强大的模式匹配和文本检索与替换的函数。ECMAscript的正则表达式语法是Perl15的正则表达式语法的大型子集。</p>
 </blockquote>
-<ul>
-<li><strong>版本号（commit id）</strong>“首先要知道回退的版本号，其次版本号不一定要写全，但是也不能太少否则Git会匹配多个版本号造成混乱。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
-<li><strong><code>HEAD</code></strong> 指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<strong><code>Git reset --hard commit_id</code></strong>.</li>
-<li>在回退之前，可以用<strong><code>git log</code></strong>查看提交的历史</li>
-<li>关闭窗口后回来查看版本，可以用<strong><code>git reflog</code></strong>来查看要回退到哪个版本</li>
-</ol>
-<blockquote>
-<p> Git版本库里添加的时候，是分两步执行的：</p>
-<blockquote>
-<ul>
-<li>用git add把文件添加进去，实际上就是把文件修改添加到<strong>暂存区</strong>(index或者叫stage)；<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/4366692.jpg" alt="step1"></li>
-<li>git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支（Git自动为我们创建了唯一一个<strong>master分支</strong>）;<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/78409519.jpg" alt="step2">
         <p class="article-more-link">
-          <a  href="/2016/10/03/Git的一些基本指令/#more">more >></a>
+          <a  href="/2016/10/03/js_RegExp/#more">more >></a>
         </p>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/10/03/Git的一些基本指令/" class="archive-article-date">
+      <a href="/2016/10/03/js_RegExp/" class="archive-article-date">
   	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yilia/">Yilia</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/换主题/">换主题</a></li></ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/javascript/">javascript</a><a class="article-category-link" href="/categories/javascript/正则表达式/">正则表达式</a>
+	</div>
+
 
       <div class="clearfix"></div>
     </div>
