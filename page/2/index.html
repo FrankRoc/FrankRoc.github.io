@@ -19,7 +19,7 @@
     <link rel="alternative" href="/atom.xml" title="FrankRoc" type="application/atom+xml">
   
   
-    <link rel="icon" href="//favicon.png">
+    <link rel="icon" href="//favicon.ico">
   
   <script src="/style.js"></script>
   
@@ -140,7 +140,7 @@
       <div class="body-wrap">
         
   
-    <article id="post-hexo更换yilia主题之后遇到的一些问题以及解决方案" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-更换Yilia主题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -150,7 +150,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/">hexo更换Yilia主题之后遇到的一些问题以及解决方案（不定期更新）</a>
+      <a class="article-title" href="/2016/10/03/更换Yilia主题/">HEXO个人博客更换Yilia主题</a>
     </h1>
   
 
@@ -158,126 +158,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>附上作者的github的参考链接<a href="https://github.com/litten/hexo-theme-yilia">https://github.com/litten/hexo-theme-yilia</a></p>
+        <p>&emsp;&emsp;hexo的默认主题不是很喜欢，这里推荐一个博主比较喜欢的yilia主题~下面是他的安装方法，话说当时因为安主题重新弄了一遍博客呀哎全是泪。</p>
+<blockquote>
+<p>参考简书 <a href="http://www.jianshu.com/p/f389ad8c49bd" target="_blank" rel="external">http://www.jianshu.com/p/f389ad8c49bd</a><br>参开CSDN博客<a href="http://blog.csdn.net/smallcheric/article/details/51049695" target="_blank" rel="external">http://blog.csdn.net/smallcheric/article/details/51049695</a></p>
 </blockquote>
-<p>&emsp;&emsp;我觉得不是很详细，很多配置都得自己研究，或许作业为了培养我们的自学研究能力吧~哈哈！在研究代码过程中也遇到了很多奇奇怪怪零零散散的小问题，同样做一个问题解决记录，方便自己和他人以后再遇到此问题能够及时的解决，节约大家的时间！</p>
-<h4 id="问题1-微博超链接到自己的主页？那么自己的主页地址是什么的？"><a href="#问题1-微博超链接到自己的主页？那么自己的主页地址是什么的？" class="headerlink" title="问题1.微博超链接到自己的主页？那么自己的主页地址是什么的？"></a>问题1.微博超链接到自己的主页？那么自己的主页地址是什么的？</h4><p><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/79959974.jpg" alt="微博链接"><br>解决方法：<br>1.打开新浪微博后如下图，在右侧找到自己的昵称，点击它。<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/7544631.jpg" alt="1.1图片微博"><br>2.打开个人主页面，如下图，在顶部地址栏中可以看到有几段地址，把后面的东西删除掉剩下包括一堆数字以及前面的部分。然后回车<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/10589765.jpg" alt="1.2链接删除"><br>3.回车之后加载出的地址便是我们需要的地址了~如下图<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/48371272.jpg" alt="1.3正确分享地址"></p>
-<h4 id="问题2-github的链接在哪里？"><a href="#问题2-github的链接在哪里？" class="headerlink" title="问题2.github的链接在哪里？"></a>问题2.github的链接在哪里？</h4><p>解决方法：<br>1.首先你得有github账户对吧？至于怎么申请？来有教程<br><a href="http://jingyan.baidu.com/article/455a9950abe0ada167277864.html">http://jingyan.baidu.com/article/455a9950abe0ada167277864.html</a> &lt;-百度教程链接<br>2.你注册好之后呢点击你的头像然后点击你的仓库(your profile)，上面的链接就是你的github链接了~<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/95961972.jpg" alt="github"></p>
-<h4 id="问题3-知乎的超链接怎么找？如图（刚入的知乎嘿嘿）"><a href="#问题3-知乎的超链接怎么找？如图（刚入的知乎嘿嘿）" class="headerlink" title="问题3.知乎的超链接怎么找？如图（刚入的知乎嘿嘿）"></a>问题3.知乎的超链接怎么找？如图（刚入的知乎嘿嘿）</h4><p><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/28645477.jpg" alt="知乎"><br>
-        <p class="article-more-link">
-          <a  href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/#more">more >></a>
-        </p>
+<p><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/28999436.jpg" alt="yilia主题"><br>1.克隆yilia包到本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</div></pre></td></tr></table></figure></p>
+<p>2.配置博客目录下面的<code>_config.yml</code>,找到theme关键字，改成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theme: yilia</div></pre></td></tr></table></figure></p>
+<p>3.进行同步操作，可以先打开本地服务-通过下面的命令查看本地效果，然后再考虑要不要同步到网上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure></p>
+<p>同步操作命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line"></div><div class="line">$ hexo d</div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;关于这个主题其他的一些细节问题，在我的另外一篇博客有一些设计，<a href="https://frankroc.github.io/2016/10/03/hexo%E6%9B%B4%E6%8D%A2yilia%E4%B8%BB%E9%A2%98%E4%B9%8B%E5%90%8E%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="更换yilia遇到的细节问题" target="_blank" rel="external">请点这里查看</a></p>
+
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/" class="archive-article-date">
+      <a href="/2016/10/03/更换Yilia主题/" class="archive-article-date">
   	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yilia/">Yilia</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Git的一些基本指令" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/03/Git的一些基本指令/">git的一些基本指令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>查看当前文件内容列表（本地仓库各个文件名字以及格式）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls (file_name)</div></pre></td></tr></table></figure>
-</li>
-<li><p>随时掌握工作区</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git status</div></pre></td></tr></table></figure>
-</li>
-<li><p>查询改文件改变情况</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git diff</div></pre></td></tr></table></figure>
-</li>
-<li><p>git log  显示从最近到最远的提交日志</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git log</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p> git log –pretty=oneline 信息比较简单输出  </p>
-<ul>
-<li>由过去穿越到未来的版本，查看所有日志<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reflog</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>git reflog 记录你的每一次命令，也可以通过此方法找Commit id(非常不错的方法)。</p>
-<ul>
-<li>回退版本到<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard HEAD^</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>用<code>HEAD</code>表示当前版本，也就是最新的提交3628164…882e1e0（注意我的提交ID和你的肯定不一样），上一个版本就是<code>HEAD^</code>，上上一个版本就是<code>HEAD^^</code>，当然往上100个版本写100个^比较容易数不过来，所以写成<strong>HEAD~100</strong>。</p>
-<ul>
-<li>获取文件内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cat &quot;filename&quot;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li><strong>版本号（commit id）</strong>“首先要知道回退的版本号，其次版本号不一定要写全，但是也不能太少否则Git会匹配多个版本号造成混乱。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
-<li><strong><code>HEAD</code></strong> 指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<strong><code>Git reset --hard commit_id</code></strong>.</li>
-<li>在回退之前，可以用<strong><code>git log</code></strong>查看提交的历史</li>
-<li>关闭窗口后回来查看版本，可以用<strong><code>git reflog</code></strong>来查看要回退到哪个版本</li>
-</ol>
-<blockquote>
-<p> Git版本库里添加的时候，是分两步执行的：</p>
-<blockquote>
-<ul>
-<li>用git add把文件添加进去，实际上就是把文件修改添加到<strong>暂存区</strong>(index或者叫stage)；<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/4366692.jpg" alt="step1"></li>
-<li>git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支（Git自动为我们创建了唯一一个<strong>master分支</strong>）;<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/78409519.jpg" alt="step2">
-        <p class="article-more-link">
-          <a  href="/2016/10/03/Git的一些基本指令/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/03/Git的一些基本指令/" class="archive-article-date">
-  	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yilia/">Yilia</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/换主题/">换主题</a></li></ul>
 	</div>
 
       
@@ -414,7 +315,7 @@
 
 
   
-    <article id="post-更换Yilia主题" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Git的一些基本指令" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -424,7 +325,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/03/更换Yilia主题/">HEXO个人博客更换Yilia主题</a>
+      <a class="article-title" href="/2016/10/03/Git的一些基本指令/">git的一些基本指令</a>
     </h1>
   
 
@@ -432,27 +333,126 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&emsp;&emsp;hexo的默认主题不是很喜欢，这里推荐一个博主比较喜欢的yilia主题~下面是他的安装方法，话说当时因为安主题重新弄了一遍博客呀哎全是泪。</p>
+        <ul>
+<li><p>查看当前文件内容列表（本地仓库各个文件名字以及格式）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls (file_name)</div></pre></td></tr></table></figure>
+</li>
+<li><p>随时掌握工作区</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git status</div></pre></td></tr></table></figure>
+</li>
+<li><p>查询改文件改变情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git diff</div></pre></td></tr></table></figure>
+</li>
+<li><p>git log  显示从最近到最远的提交日志</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git log</div></pre></td></tr></table></figure>
+</li>
+</ul>
 <blockquote>
-<p>参考简书 <a href="http://www.jianshu.com/p/f389ad8c49bd" target="_blank" rel="external">http://www.jianshu.com/p/f389ad8c49bd</a><br>参开CSDN博客<a href="http://blog.csdn.net/smallcheric/article/details/51049695" target="_blank" rel="external">http://blog.csdn.net/smallcheric/article/details/51049695</a></p>
+<p> git log –pretty=oneline 信息比较简单输出  </p>
+<ul>
+<li>由过去穿越到未来的版本，查看所有日志<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reflog</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>git reflog 记录你的每一次命令，也可以通过此方法找Commit id(非常不错的方法)。</p>
+<ul>
+<li>回退版本到<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard HEAD^</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>用<code>HEAD</code>表示当前版本，也就是最新的提交3628164…882e1e0（注意我的提交ID和你的肯定不一样），上一个版本就是<code>HEAD^</code>，上上一个版本就是<code>HEAD^^</code>，当然往上100个版本写100个^比较容易数不过来，所以写成<strong>HEAD~100</strong>。</p>
+<ul>
+<li>获取文件内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cat &quot;filename&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
 </blockquote>
-<p><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/28999436.jpg" alt="yilia主题"><br>1.克隆yilia包到本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</div></pre></td></tr></table></figure></p>
-<p>2.配置博客目录下面的<code>_config.yml</code>,找到theme关键字，改成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theme: yilia</div></pre></td></tr></table></figure></p>
-<p>3.进行同步操作，可以先打开本地服务-通过下面的命令查看本地效果，然后再考虑要不要同步到网上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure></p>
-<p>同步操作命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line"></div><div class="line">$ hexo d</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;关于这个主题其他的一些细节问题，在我的另外一篇博客有一些设计，<a href="https://frankroc.github.io/2016/10/03/hexo%E6%9B%B4%E6%8D%A2yilia%E4%B8%BB%E9%A2%98%E4%B9%8B%E5%90%8E%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="更换yilia遇到的细节问题" target="_blank" rel="external">请点这里查看</a></p>
-
+<ul>
+<li><strong>版本号（commit id）</strong>“首先要知道回退的版本号，其次版本号不一定要写全，但是也不能太少否则Git会匹配多个版本号造成混乱。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><strong><code>HEAD</code></strong> 指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<strong><code>Git reset --hard commit_id</code></strong>.</li>
+<li>在回退之前，可以用<strong><code>git log</code></strong>查看提交的历史</li>
+<li>关闭窗口后回来查看版本，可以用<strong><code>git reflog</code></strong>来查看要回退到哪个版本</li>
+</ol>
+<blockquote>
+<p> Git版本库里添加的时候，是分两步执行的：</p>
+<blockquote>
+<ul>
+<li>用git add把文件添加进去，实际上就是把文件修改添加到<strong>暂存区</strong>(index或者叫stage)；<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/4366692.jpg" alt="step1"></li>
+<li>git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支（Git自动为我们创建了唯一一个<strong>master分支</strong>）;<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-4/78409519.jpg" alt="step2">
+        <p class="article-more-link">
+          <a  href="/2016/10/03/Git的一些基本指令/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/10/03/更换Yilia主题/" class="archive-article-date">
+      <a href="/2016/10/03/Git的一些基本指令/" class="archive-article-date">
   	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yilia/">Yilia</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/换主题/">换主题</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-hexo更换yilia主题之后遇到的一些问题以及解决方案" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/">hexo更换Yilia主题之后遇到的一些问题以及解决方案（不定期更新）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>附上作者的github的参考链接<a href="https://github.com/litten/hexo-theme-yilia">https://github.com/litten/hexo-theme-yilia</a></p>
+</blockquote>
+<p>&emsp;&emsp;我觉得不是很详细，很多配置都得自己研究，或许作业为了培养我们的自学研究能力吧~哈哈！在研究代码过程中也遇到了很多奇奇怪怪零零散散的小问题，同样做一个问题解决记录，方便自己和他人以后再遇到此问题能够及时的解决，节约大家的时间！</p>
+<h4 id="问题1-微博超链接到自己的主页？那么自己的主页地址是什么的？"><a href="#问题1-微博超链接到自己的主页？那么自己的主页地址是什么的？" class="headerlink" title="问题1.微博超链接到自己的主页？那么自己的主页地址是什么的？"></a>问题1.微博超链接到自己的主页？那么自己的主页地址是什么的？</h4><p><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/79959974.jpg" alt="微博链接"><br>解决方法：<br>1.打开新浪微博后如下图，在右侧找到自己的昵称，点击它。<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/7544631.jpg" alt="1.1图片微博"><br>2.打开个人主页面，如下图，在顶部地址栏中可以看到有几段地址，把后面的东西删除掉剩下包括一堆数字以及前面的部分。然后回车<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/10589765.jpg" alt="1.2链接删除"><br>3.回车之后加载出的地址便是我们需要的地址了~如下图<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/48371272.jpg" alt="1.3正确分享地址"></p>
+<h4 id="问题2-github的链接在哪里？"><a href="#问题2-github的链接在哪里？" class="headerlink" title="问题2.github的链接在哪里？"></a>问题2.github的链接在哪里？</h4><p>解决方法：<br>1.首先你得有github账户对吧？至于怎么申请？来有教程<br><a href="http://jingyan.baidu.com/article/455a9950abe0ada167277864.html">http://jingyan.baidu.com/article/455a9950abe0ada167277864.html</a> &lt;-百度教程链接<br>2.你注册好之后呢点击你的头像然后点击你的仓库(your profile)，上面的链接就是你的github链接了~<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/95961972.jpg" alt="github"></p>
+<h4 id="问题3-知乎的超链接怎么找？如图（刚入的知乎嘿嘿）"><a href="#问题3-知乎的超链接怎么找？如图（刚入的知乎嘿嘿）" class="headerlink" title="问题3.知乎的超链接怎么找？如图（刚入的知乎嘿嘿）"></a>问题3.知乎的超链接怎么找？如图（刚入的知乎嘿嘿）</h4><p><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/28645477.jpg" alt="知乎"><br>
+        <p class="article-more-link">
+          <a  href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/03/hexo更换yilia主题之后遇到的一些问题以及解决方案/" class="archive-article-date">
+  	<time datetime="2016-10-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yilia/">Yilia</a></li></ul>
 	</div>
 
       
