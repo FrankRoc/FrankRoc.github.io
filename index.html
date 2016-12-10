@@ -140,6 +140,69 @@
       <div class="body-wrap">
         
   
+    <article id="post-AJAX学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/11/AJAX学习笔记/">AJAX学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Asynchronous JavaScript and XML</p>
+<ul>
+<li>AJAX的最大优点：在不需要重新加载页面的情况下，于服务器交换数据使网页内容部分更新。</li>
+<li>AJAX不需要任何浏览器插件，但是需要用户允许javascript在浏览器运行。</li>
+<li>AJAX不是新的编程语言，是一种符合现有标准的新方法。</li>
+</ul>
+<blockquote>
+<p>使用 AJAX 的应用程序案例：新浪微博、Google 地图、开心网等等</p>
+</blockquote>
+<h2 id="AJAX工作原理"><a href="#AJAX工作原理" class="headerlink" title="AJAX工作原理"></a>AJAX工作原理</h2><p><img src="http://odxqfn7qu.bkt.clouddn.com/public/16-12-10/11320179.jpg" alt="ajax工作原理"></p>
+        <p class="article-more-link">
+          <a  href="/2016/11/11/AJAX学习笔记/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/11/AJAX学习笔记/" class="archive-article-date">
+  	<time datetime="2016-11-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-11</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-注释规范" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -462,70 +525,6 @@
 
 
   
-    <article id="post-hexo+github搭建网站遇到的一些问题收集总结" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/03/hexo+github搭建网站遇到的一些问题收集总结/">hexo+github搭建网站遇到的一些问题收集总结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&emsp;&emsp;我是在看人家大神的简书来搭建个人博客的，但还是遇到了很多问题。这里，在等待安装的空闲时间写点错误总结。</p>
-<blockquote>
-<p>首先附上我参考的简书博主地址<br>1.<a href="http://www.jianshu.com/p/06c0fb6f8b4d" title="最简单的Hexo搭建博客教程">http://www.jianshu.com/p/06c0fb6f8b4d</a>作者：hedge_hog 题目：最简单的Hexo搭建博客教程<br>2.<a href="http://www.jianshu.com/p/465830080ea9" title="HEXO+Github,搭建属于自己的博客">http://www.jianshu.com/p/465830080ea9</a> 作者：潘柏信 题目：HEXO+Github,搭建属于自己的博客<br>3.<a href="http://www.jianshu.com/p/b7886271e21a" title="Hexo安装和配置">http://www.jianshu.com/p/b7886271e21a</a>作者：holaOla 题目：Hexo安装和配置</p>
-</blockquote>
-<ul>
-<li><strong>问题1</strong>：nodejs自带的npm版本太低我要升级！怎么升级？(这个问题貌似不是很影响博客可以无视了)<br><strong>初始方案</strong>：试试命令 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install npm（前提你安装了nodejs）</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/44204841.jpg" alt="npm升级图"><br>但是又有问题了！TT但是它就像摩天轮转呀转个不停！<br>我先查看网速使用情况：<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/18972637.jpg" alt=""><br>应该是这个可能是太慢了。。多等等（5分钟以后）<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/4312338.jpg" alt=""><br>貌似下载好 一看版本还是原来的版本！（待我去SegmentFault瞅瞅）<br><strong>解决方法</strong>：复制<code>AppData\Roaming\npm\node_modules\npm</code>下的文件到你的NodeJS安装目录下的 <code>\node_modules\npm</code> 中，覆盖掉原来的全部文件。</p>
-<ul>
-<li><strong>问题2.</strong>安装hexo失败<br>1.首先 <code>npm install -g hexo-cli</code>失败<br><img src="http://odxqfn7qu.bkt.clouddn.com/16-10-3/30071233.jpg" alt="hexo失败">
-        <p class="article-more-link">
-          <a  href="/2016/10/03/hexo+github搭建网站遇到的一些问题收集总结/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/03/hexo+github搭建网站遇到的一些问题收集总结/" class="archive-article-date">
-  	<time datetime="2016-10-03T12:10:33.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-03</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-github/">hexo github</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -590,7 +589,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/URI/" style="font-size: 10px;">URI</a> <a href="/tags/URl/" style="font-size: 10px;">URl</a> <a href="/tags/Xshell/" style="font-size: 10px;">Xshell</a> <a href="/tags/Yilia/" style="font-size: 20px;">Yilia</a> <a href="/tags/centOS/" style="font-size: 10px;">centOS</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo-github/" style="font-size: 10px;">hexo github</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/xhtml/" style="font-size: 10px;">xhtml</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/免流量/" style="font-size: 10px;">免流量</a> <a href="/tags/多说/" style="font-size: 10px;">多说</a> <a href="/tags/换主题/" style="font-size: 15px;">换主题</a> <a href="/tags/简历/" style="font-size: 10px;">简历</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a>
+    				<a href="/tags/URI/" style="font-size: 10px;">URI</a> <a href="/tags/URl/" style="font-size: 10px;">URl</a> <a href="/tags/Xshell/" style="font-size: 10px;">Xshell</a> <a href="/tags/Yilia/" style="font-size: 20px;">Yilia</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/centOS/" style="font-size: 10px;">centOS</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo-github/" style="font-size: 10px;">hexo github</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/xhtml/" style="font-size: 10px;">xhtml</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/免流量/" style="font-size: 10px;">免流量</a> <a href="/tags/多说/" style="font-size: 10px;">多说</a> <a href="/tags/换主题/" style="font-size: 15px;">换主题</a> <a href="/tags/简历/" style="font-size: 10px;">简历</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a>
     			</div>
     	</section>
     
